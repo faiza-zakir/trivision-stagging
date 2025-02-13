@@ -295,7 +295,7 @@ const SunglassesProductDetails = () => {
         />
       </section>
       <div className="flex flex-wrap justify-center py-10 px-5 gap-5">
-        {product.product.product_images.slice(1, 4).map((img, index) => (
+        {product?.product?.product_images?.slice(1, 4).map((img, index) => (
           <IdeologyBullets
             key={index}
             ideologyBulletsMinWidth="160px"
@@ -336,7 +336,7 @@ const SunglassesProductDetails = () => {
               }}
               className="w-full max-w-full"
             >
-              {products.relatedProducts?.map((relatedProduct, index) => (
+              {product?.relatedProducts?.map((relatedProduct, index) => (
                 <SwiperSlide key={index}>
                   <ProductCards
                     key={index}

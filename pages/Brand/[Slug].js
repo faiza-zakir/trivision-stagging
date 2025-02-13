@@ -34,8 +34,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   try {
-     
-console.log(params.Slug, "params")
+    console.log(params.Slug, "params");
     // const brandSlug = params.slug; // Ensure it's lowercase if your file is [slug].js
     //
 

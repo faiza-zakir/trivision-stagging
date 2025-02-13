@@ -153,7 +153,7 @@ const ProductListing = ({ products }) => {
       <FrameComponent1 />
       <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[34px] leading-[normal] tracking-[normal] text-center text-base text-background-color-primary font-h4-32">
         <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full">
-          <div className="flex-1 overflow-hidden flex flex-col items-end justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full">
+          <div className="flex-1 overflow-hidden flex flex-col items-end justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border mq480:pl-5 mq480:pr-5 mq480:box-border">
             <div className="self-stretch flex flex-row items-start justify-center py-0 pl-px pr-0">
               <Image
                 className="h-12 w-[92.5px] relative overflow-hidden shrink-0"
@@ -173,21 +173,25 @@ const ProductListing = ({ products }) => {
           </div>
         ) : (
           <>
-            <section className="w-[1440px] flex flex-col items-center justify-center pt-0 px-20 pb-[26px] box-border max-w-full">
+            <section className="w-[1440px] flex flex-col items-center justify-center pt-0 px-20 mq480:px-3 pb-[26px] box-border max-w-full">
               <div
                 className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"
                 style={{ color: "black" }}
               >
-                <h1>{products[0]?.brand?.title || "Special Title"}</h1>
+                <h1 className="mq480:text-base mq480:text-center">
+                  {products[0]?.brand?.title || "Special Title"}
+                </h1>
               </div>
               <div
                 className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"
                 style={{ color: "black" }}
               >
-                <p>{products[0]?.brand?.content || "Special Title"}</p>
+                <p className="mq480:text-base mq480:text-center">
+                  {products[0]?.brand?.content || "Special Title"}
+                </p>
               </div>
             </section>
-            <section className="w-[1440px] flex flex-row items-center justify-center pt-0 px-20 pb-[26px] box-border max-w-full">
+            <section className="w-[1440px] flex flex-row items-center justify-center pt-0 px-20 mq480:px-3 pb-[26px] box-border max-w-full">
               <FiltersAndProducts product={products} />
             </section>
             <FrameComponent4 product={products} />
