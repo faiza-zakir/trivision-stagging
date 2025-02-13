@@ -267,6 +267,7 @@ import FrameComponent13 from "../../components/frame-component13";
 import ProductInfo from "../../components/product-info";
 import Insta from "../../components/insta";
 import Footer from "../../components/footer";
+import Loader from "../../components/Loader/Loader";
 
 const ClearContactLensDetails = () => {
   const router = useRouter();
@@ -293,7 +294,7 @@ const ClearContactLensDetails = () => {
     fetchProduct();
   }, [slug]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (!product) return <p>Product not found</p>;
 
   return (

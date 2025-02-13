@@ -3,6 +3,7 @@ import Image from "next/image";
 import Footer from "../components/footer";
 import FrameComponent1 from "../components/frame-component1";
 import axios from "axios";
+import Loader from "../components/Loader/Loader";
 
 const Wishlist = () => {
   const [orders, setOrders] = useState([]);
@@ -76,7 +77,7 @@ const Wishlist = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (

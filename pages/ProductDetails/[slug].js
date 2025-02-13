@@ -236,6 +236,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import Loader from "../../components/Loader/Loader";
 
 const SunglassesProductDetails = () => {
   const [product, setProduct] = useState(null);
@@ -274,7 +275,7 @@ const SunglassesProductDetails = () => {
     alert("Product added to cart!");
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (!product) return null;
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import FrameComponent1 from "../../components/frame-component1";
 import FiltersAndProducts from "../../components/eyeglasses/filter&product";
 import FrameComponent4 from "../../components/frame-component4";
+import Loader from "../../components/Loader/Loader";
 import Footer from "../../components/footer";
 import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
@@ -51,23 +52,17 @@ const ProductListing = () => {
   }, [slug, gender]); // Run the effect when slug or gender changes
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
-  console.log("products", products);
-
   return (
     <>
       <FrameComponent1 />
       <div className="w-full bg-gray-100 flex flex-col items-center">
-        <div
-          className="w-full bg-cover bg-no-repeat bg-[top] py-10"
-          style={{ backgroundImage: "url('/banner1@3x.png')" }}
-        ></div>
         <section className="w-full max-w-7xl px-5 pb-[60px] pt-[60px]">
           <FiltersAndProducts product={products} />
         </section>

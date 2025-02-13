@@ -22,7 +22,7 @@ const FrameComponent13 = memo(({ className = "", products }) => {
       className={`self-stretch overflow-hidden flex flex-col items-center justify-start py-[60px] px-20 box-border gap-6 max-w-full text-left text-xs text-gray-400 font-h4-32 mq480:pt-5 mq480:pb-5 mq480:box-border mq825:py-[25px] mq825:px-10 mq825:box-border mq1410:pt-[39px] mq1410:pb-[39px] mq1410:box-border ${className}`}
     >
       <div className="flex-1 flex flex-col items-start justify-start gap-20 max-w-full">
-        <div className="relative leading-[150%] font-medium">{`Home > ${products.products.category.name} > ${products.products.brand.name} > ${products.products.product_name_short}`}</div>
+        <div className="relative leading-[150%] font-medium">{`Home > ${products.category.name} > ${products.brand.name} > ${products.product_name_short}`}</div>
         <div className="self-stretch flex flex-row items-start justify-start gap-10 max-w-full text-base text-black mq750:gap-5 mq1250:flex-wrap">
           {/* <Image
             className="h-[813px] flex-1 relative max-w-full overflow-hidden min-w-[481px] mq750:min-w-full"
@@ -51,19 +51,19 @@ const FrameComponent13 = memo(({ className = "", products }) => {
                 <div className="self-stretch flex flex-col items-start justify-start gap-2">
                   <div className="self-stretch flex flex-row items-center justify-start gap-2 mq750:flex-wrap">
                     <div className="flex-1 relative leading-[150%] font-medium inline-block min-w-[161px]">
-                      {products.products.brand.name}
+                      {products.brand.name}
                     </div>
                     <div className="flex-1 relative leading-[150%] font-medium font-h4-32 text-tomato text-right inline-block min-w-[161px]">
                       Out of Stock
                     </div>
                   </div>
                   <h1 className="m-0 self-stretch relative text-13xl leading-[130%] font-medium font-h4-32 text-black mq480:text-lgi mq480:leading-[25px] mq750:text-7xl mq750:leading-[33px]">
-                    {products.products.product_name_short}
+                    {products.product_name_short}
                   </h1>
                 </div>
                 <div className="self-stretch flex flex-row items-center justify-center gap-2.5 max-w-full text-5xl text-black font-h4-32 mq750:flex-wrap">
                   <div className="flex-1 relative leading-[140%] font-medium inline-block min-w-[75px] max-w-full mq480:text-lgi mq480:leading-[27px]">
-                    Aed {products.products.retail_price}
+                    Aed {products.retail_price}
                   </div>
                   <Image
                     className="h-4 w-24 relative"

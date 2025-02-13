@@ -38,7 +38,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Brand
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.brand?.name}
+                  {products?.brand?.name}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -46,7 +46,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Model
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.model}
+                  {products?.model}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -54,7 +54,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Power
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.power}
+                  {products?.power}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -62,7 +62,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Color Code
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.color}
+                  {products?.color}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -70,7 +70,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Base Curve
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.base_curve}
+                  {products?.base_curve}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -78,7 +78,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Diameter
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.diameter}
+                  {products?.diameter}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -86,7 +86,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Pack
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products.pack}
+                  {products.pack}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -94,7 +94,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Replacement
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.replacement}
+                  {products?.replacement}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -102,7 +102,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Contact_Lens Type
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.contact_lens_type}
+                  {products?.contact_lens_type}
                 </div>
               </div>
               {/* <div className="self-stretch flex flex-row items-center justify-start py-0 gap-2 mq480:pr-5 mq480:box-border mq825:flex-wrap">
@@ -124,7 +124,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Product Name
                 </div>
                 <div className="relative leading-[150%] font-medium inline-block min-w-[150px]">
-                  {products.products?.product_name_long}
+                  {products?.product_name_long}
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-start justify-start gap-2 max-w-full mq825:flex-wrap">
@@ -132,7 +132,7 @@ const ProductInfo = memo(({ className = "", products, weuiarrowFilled1 }) => {
                   Product Description
                 </div>
                 <div className="flex-1 relative leading-[150%] font-medium inline-block min-w-[294px] max-w-full">
-                  {products.products?.product_description}
+                  {products?.product_description}
                 </div>
               </div>
             </div>

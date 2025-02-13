@@ -116,6 +116,7 @@ import FrameComponent1 from "../../components/frame-component1";
 import FiltersAndProducts from "../../components/contactlenses/filter&product";
 import FrameComponent4 from "../../components/frame-component4";
 import Footer from "../../components/footer";
+import Loader from "../../components/Loader/Loader";
 
 export const getServerSideProps = async ({ params }) => {
   try {
@@ -148,6 +149,9 @@ const ProductListing = ({ products }) => {
     }
   }, [products]);
 
+  if (loading) return <Loader />;
+  if (!products) return <p>Product not found</p>;
+
   return (
     <>
       <FrameComponent1 />
@@ -166,45 +170,37 @@ const ProductListing = ({ products }) => {
             </div>
           </div>
         </div>
-        {loading ? (
-          <div className="loader-container flex justify-center items-center">
-            <div className="loader">loading....</div>
-            {/* Custom loader, can be styled or replaced */}
+
+        <section className="w-[1440px] flex flex-col items-center justify-center pt-0 px-20 mq480:px-3 pb-[26px] box-border max-w-full">
+          <div
+            className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"
+            style={{ color: "black" }}
+          >
+            <h1 className="mq480:text-base mq480:text-center">
+              {products[0]?.brand?.title || "Special Title"}
+            </h1>
           </div>
-        ) : (
-          <>
-            <section className="w-[1440px] flex flex-col items-center justify-center pt-0 px-20 mq480:px-3 pb-[26px] box-border max-w-full">
-              <div
-                className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"
-                style={{ color: "black" }}
-              >
-                <h1 className="mq480:text-base mq480:text-center">
-                  {products[0]?.brand?.title || "Special Title"}
-                </h1>
-              </div>
-              <div
-                className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"
-                style={{ color: "black" }}
-              >
-                <p className="mq480:text-base mq480:text-center">
-                  {products[0]?.brand?.content || "Special Title"}
-                </p>
-              </div>
-            </section>
-            <section className="w-[1440px] flex flex-row items-center justify-center pt-0 px-20 mq480:px-3 pb-[26px] box-border max-w-full">
-              <FiltersAndProducts product={products} />
-            </section>
-            <FrameComponent4 product={products} />
-            <Footer
-              maskGroup="/mask-group@2x.png"
-              formMargin="0"
-              iconYoutube="/icon--youtube21.svg"
-              itemImg="/item--img3.svg"
-              itemImg1="/item--img-13.svg"
-              itemImg2="/item--img-14.svg"
-            />
-          </>
-        )}
+          <div
+            className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"
+            style={{ color: "black" }}
+          >
+            <p className="mq480:text-base mq480:text-center">
+              {products[0]?.brand?.content || "Special Title"}
+            </p>
+          </div>
+        </section>
+        <section className="w-[1440px] flex flex-row items-center justify-center pt-0 px-20 mq480:px-3 pb-[26px] box-border max-w-full">
+          <FiltersAndProducts product={products} />
+        </section>
+        <FrameComponent4 product={products} />
+        <Footer
+          maskGroup="/mask-group@2x.png"
+          formMargin="0"
+          iconYoutube="/icon--youtube21.svg"
+          itemImg="/item--img3.svg"
+          itemImg1="/item--img-13.svg"
+          itemImg2="/item--img-14.svg"
+        />
       </div>
     </>
   );

@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import FrameComponent1 from "../components/frame-component1";
 import axios from "axios";
 import Right from "../components/CartRight";
+import Loader from "../components/Loader/Loader";
 
 const Cart = () => {
   const [orders, setOrders] = useState([]);
@@ -102,7 +103,7 @@ const Cart = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
