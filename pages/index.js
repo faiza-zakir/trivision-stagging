@@ -37,13 +37,6 @@ const Home = () => {
       </section>
       <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 mq480:px-3 pb-[60px] mq480:pb-[40px] box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
         <Bestseller />
-        {/* <Image
-          className="h-6 w-6 absolute !m-[0] right-[40px] bottom-[235.5px] overflow-hidden shrink-0 object-contain"
-          width={24}
-          height={24}
-          alt=""
-          src="/next-2@2x.png"
-        /> */}
       </section>
       <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 pb-[60px] mq480:pb-[40px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
         <div className="w-[1320px] flex flex-col items-center justify-center gap-10 max-w-full mq750:gap-5">
@@ -92,7 +85,7 @@ const Home = () => {
 
                 {/* Category 2 */}
                 <SwiperSlide>
-                  <div className="lex-1 h-[314px] w-[380px] mq480:w-full overflow-hidden flex flex-row items-end justify-center p-6 box-border bg-[url('/sunglasses@3x.png')] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-background-color-primary font-h4-32">
+                  <div className="lex-1 h-[314px] w-[380px] mq480:w-full overflow-hidden flex flex-row items-end justify-center p-6 box-border bg-[url('/eyeglassimg.jpeg')] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-background-color-primary font-h4-32">
                     <h2 className="m-0 relative text-5xl leading-[120%] font-medium font-[inherit] mq480:text-base">
                       Eyeglasses
                     </h2>
@@ -101,7 +94,7 @@ const Home = () => {
 
                 {/* Category 3 */}
                 <SwiperSlide>
-                  <div className="lex-1 h-[314px] w-[380px] mq480:w-full overflow-hidden flex flex-row items-end justify-center p-6 box-border bg-[url('/sunglasses@3x.png')] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-background-color-primary font-h4-32">
+                  <div className="lex-1 h-[314px] w-[380px] mq480:w-full overflow-hidden flex flex-row items-end justify-center p-6 box-border bg-[url('/kidsimg.jpeg')] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-background-color-primary font-h4-32">
                     <h2 className="m-0 relative text-5xl leading-[120%] font-medium font-[inherit] mq480:text-base">
                       Kid Sunglasses
                     </h2>
@@ -110,7 +103,7 @@ const Home = () => {
 
                 {/* Category 4 */}
                 <SwiperSlide>
-                  <div className="lex-1 h-[314px] w-[380px] mq480:w-full overflow-hidden flex flex-row items-end justify-center p-6 box-border bg-[url('/sunglasses@3x.png')] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-background-color-primary font-h4-32">
+                  <div className="lex-1 h-[314px] w-[380px] mq480:w-full overflow-hidden flex flex-row items-end justify-center p-6 box-border bg-[url('/lensimg.jpeg')] bg-cover bg-no-repeat bg-[top] text-left text-5xl text-background-color-primary font-h4-32">
                     <h2 className="m-0 relative text-5xl leading-[120%] font-medium font-[inherit] mq480:text-base">
                       Contact Lenses
                     </h2>
@@ -193,7 +186,9 @@ const Home = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <ProductCards
-                  imgBackgroundImage="url('/img@3x.png')"
+                  imgBackgroundImage="/newarriv1.jpg"
+                  title="NEW ARRIVALS"
+                  price="10"
                   colorOptionJustifyContent="center"
                   priceContainerJustifyContent="center"
                   iconamoonheartLight="/iconamoonheartlight.svg"
@@ -202,7 +197,9 @@ const Home = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <ProductCards
-                  imgBackgroundImage="url('/img@3x.png')"
+                  imgBackgroundImage="/newarriv2.jpg"
+                  title="NEW ARRIVALS"
+                  price="20"
                   colorOptionJustifyContent="center"
                   priceContainerJustifyContent="center"
                   iconamoonheartLight="/iconamoonheartlight-1.svg"
@@ -211,7 +208,9 @@ const Home = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <ProductCards
-                  imgBackgroundImage="url('/img@3x.png')"
+                  imgBackgroundImage="/newarriv3.jpg"
+                  title="NEW ARRIVALS"
+                  price="30"
                   colorOptionJustifyContent="center"
                   priceContainerJustifyContent="center"
                   iconamoonheartLight="/iconamoonheartlight-2.svg"

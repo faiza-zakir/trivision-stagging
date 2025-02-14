@@ -132,16 +132,10 @@ const ProductListing = ({ products }) => {
       <FrameComponent1 />
       <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[34px] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[17px]">
         {/* Banner Section */}
-        <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full">
-          <div
-            className="flex-1 flex flex-col items-end justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 
-            bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full 
-            mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5"
-          />
-        </div>
+        <div className="w-full bg-[url('/eyeglassbanner.jpg')] bg-cover bg-no-repeat bg-center h-[60vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
 
         {/* Products & Filters */}
-        <section className="w-[1440px] flex flex-row items-start justify-start px-20 pb-[26px] box-border max-w-full mq750:px-10">
+        <section className="w-[1440px] flex flex-row items-start justify-start px-20 pb-[26px] pt-[60px] box-border max-w-full mq750:px-10">
           <FiltersAndProducts product={products} />
         </section>
 

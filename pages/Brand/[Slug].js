@@ -68,20 +68,7 @@ const ProductListing = ({ products }) => {
     <>
       <FrameComponent1 />
       <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[34px] leading-[normal] tracking-[normal] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[17px]">
-        <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full">
-          <div className="flex-1 overflow-hidden flex flex-col items-end justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border mq480:pl-5 mq480:pr-5 mq480:box-border">
-            <div className="self-stretch flex flex-row items-start justify-center py-0 pl-px pr-0">
-              <Image
-                className="h-12 w-[92.5px] relative overflow-hidden shrink-0"
-                loading="lazy"
-                width={93}
-                height={48}
-                alt="Brand Logo"
-                src="/rayban-logosvg.svg"
-              />
-            </div>
-          </div>
-        </div>
+        <div className="w-full bg-[url('/brandBanner.jpg')] bg-cover bg-no-repeat bg-center h-[50vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
         <section className="w-[1440px] flex flex-col items-center justify-center pt-0 px-20 pb-[26px] box-border max-w-full mq750:pl-10 mq750:pr-10 mq750:box-border">
           <div
             className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"

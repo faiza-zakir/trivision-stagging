@@ -87,7 +87,7 @@ const SunglassesListing = () => {
       <section className="self-stretch flex flex-row items-start justify-end pt-0 px-20 pb-[26px] box-border max-w-full text-left text-base text-black font-h4-32 mq750:pl-10 mq750:pr-10 mq750:box-border">
         <div className="flex-1 flex flex-col items-start justify-start gap-[120px] max-w-full mq750:gap-[60px] mq480:gap-[30px]">
           <div className="self-stretch flex flex-col items-start justify-start gap-10 mq750:gap-5">
-            <div className="self-stretch flex flex-row items-start justify-between gap-5 mq480:flex-wrap">
+            {/* <div className="self-stretch flex flex-row items-start justify-between gap-5 mq480:flex-wrap">
               <div className="h-10 border-black border-[1px] border-solid box-border flex flex-row items-center justify-center py-1.5 pl-4 pr-[13px] gap-2">
                 <Image
                   className="h-6 w-6 relative overflow-hidden shrink-0 object-contain mq480:h-4 mq480:w-4"
@@ -115,7 +115,7 @@ const SunglassesListing = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="self-stretch flex flex-row items-start justify-start flex-wrap content-start gap-x-2 gap-y-6">
               <ProductCards
                 imgBackgroundImage="url('/img@3x.png')"

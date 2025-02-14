@@ -21,6 +21,7 @@ const ProductCards = memo(
     product_id,
     onAddToCart,
     onAddToWishlist,
+    title,
   }) => {
     const [cart, setCart] = useState([]);
 
@@ -114,7 +115,7 @@ const ProductCards = memo(
         >
           <div className="absolute top-[12px] left-[calc(50%_-_57px)] flex flex-row items-center justify-center py-1 px-4">
             <div className="relative leading-[150%] font-medium">
-              BEST SELLER
+              {title ? title : "BEST SELLER"}
             </div>
           </div>
           <div

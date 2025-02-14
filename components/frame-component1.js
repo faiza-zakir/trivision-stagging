@@ -175,14 +175,14 @@ const FrameComponent1 = memo(({ className = "" }) => {
               </div>
             </nav>
           </div>
-          <div className="w-44 flex flex-row items-start justify-start relative">
+          <div className="w-44 flex flex-row items-start justify-start relative z-1">
             {isSearchOpen && (
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="absolute left-0 top-[100%] w-48 h-11 px-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:border-blue-500 transition-all duration-300"
+                className="absolute left-10 top-0 z-2 w-48 h-11 px-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:border-blue-500 transition-all duration-300"
               />
             )}
             <Image
@@ -195,7 +195,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
               onClick={() => setIsSearchOpen(!isSearchOpen)}
             />
             <Image
-              className="h-11 w-11 relative"
+              className="h-11 w-11"
               loading="lazy"
               width={44}
               height={44}
@@ -211,7 +211,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
               }}
             />
             <Image
-              className="h-11 w-11 relative"
+              className="h-11 w-11"
               loading="lazy"
               width={44}
               height={44}

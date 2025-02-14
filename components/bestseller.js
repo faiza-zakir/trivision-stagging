@@ -60,17 +60,38 @@ const Bestseller = memo(({ className = "" }) => {
             </div>
           </SwiperSlide>
 
-          {[1, 2, 3].map((item, index) => (
-            <SwiperSlide key={index}>
-              <ProductCards
-                imgBackgroundImage="url('/img@3x.png')"
-                colorOptionJustifyContent="center"
-                priceContainerJustifyContent="center"
-                iconamoonheartLight={`/iconamoonheartlight-${item}.svg`}
-                sVG={`/svg-${item}.svg`}
-              />
-            </SwiperSlide>
-          ))}
+          {/* {[1, 2, 3].map((item, index) => ( */}
+          <SwiperSlide>
+            <ProductCards
+              imgBackgroundImage="bestseller1.jpg"
+              price="15"
+              colorOptionJustifyContent="center"
+              priceContainerJustifyContent="center"
+              iconamoonheartLight={`/iconamoonheartlight.svg`}
+              sVG={`/svg-1.svg`}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCards
+              imgBackgroundImage="bestseller2.jpg"
+              price="10"
+              colorOptionJustifyContent="center"
+              priceContainerJustifyContent="center"
+              iconamoonheartLight={`/iconamoonheartlight.svg`}
+              sVG={`/svg-1.svg`}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductCards
+              imgBackgroundImage="bestseller3.jpg"
+              price="25"
+              colorOptionJustifyContent="center"
+              priceContainerJustifyContent="center"
+              iconamoonheartLight={`/iconamoonheartlight.svg`}
+              sVG={`/svg-1.svg`}
+            />
+          </SwiperSlide>
+          {/* ))} */}
         </Swiper>
 
         <button
