@@ -257,7 +257,7 @@ const Footer = memo(
                 width={24}
                 height={24}
                 alt=""
-                src="/icon--x.svg"
+                src="/pinterest.svg"
                 onClick={() =>
                   handleSocialIcons(
                     "https://www.pinterest.com/trivisionoptical/"

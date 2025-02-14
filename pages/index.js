@@ -1,15 +1,13 @@
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import FrameComponent1 from "../components/frame-component1";
 import Banner from "../components/banner";
 import Bestseller from "../components/bestseller";
-import Sunglasses from "../components/sunglasses";
 import ProductCards from "../components/product-cards";
 import FrameComponent2 from "../components/frame-component2";
 import JoinWrapper from "../components/join-wrapper";
-import AccordionItem from "../components/accordion-item";
-import AccordionItem1 from "../components/accordion-item1";
 import ImagePlaceholders from "../components/image-placeholders";
+import FaqComponentHome from "../components/faq-component-home";
 import Footer from "../components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -18,9 +16,6 @@ import { Navigation } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
 
 const Home = () => {
-  const onAccordionHeaderClick = useCallback((event) => {
-    event.preventDefault();
-  }, []);
   const prevButtonRefCategories = useRef(null);
   const nextButtonRefCategories = useRef(null);
   const prevButtonRefNewArrivals = useRef(null);
@@ -241,62 +236,8 @@ const Home = () => {
           emptyPlaceholders2="/6@2x.png"
           emptyPlaceholders3="/5@2x.png"
         />
-        <div className="self-stretch flex flex-row mq480:flex-col items-start justify-between gap-[60px] pt-[60px] mq480:pt-[40px] max-w-[1380px] mq480:w-full mx-auto mq750:gap-[30px] mq1250:flex-wrap-nowrap">
-          <div className="flex flex-col items-start justify-start px-0 pb-0 box-border max-w-full mq750:box-border mq750:min-w-full mq1250:flex-1">
-            <div className="self-stretch flex flex-col items-start justify-start gap-10 max-w-full mq750:gap-5">
-              <div className="self-stretch flex flex-col items-start justify-start py-0 pl-0 pr-5 box-border max-w-full">
-                <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] inline-block max-w-full mq480:text-xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
-                  Frequently Asked Questions
-                </h1>
-              </div>
-              <div
-                className="self-stretch flex flex-col items-start justify-start text-xl"
-                data-acc-group
-              >
-                <AccordionItem />
-                <div
-                  className="w-full border-gray-800 border-b-[1px] border-solid box-border hidden flex-col items-start justify-start [transition-property:all] ease-[cubic-bezier(0.4,_0,_0.2,_1)] duration-[150ms] cursor-pointer"
-                  data-acc-item
-                  data-acc-header
-                  onClick={onAccordionHeaderClick}
-                >
-                  <div className="w-full h-16 flex flex-row items-center justify-start py-4 px-0 box-border gap-6">
-                    <h3 className="m-0 flex-1 text-inherit leading-[140%] font-medium font-[inherit] mq480:text-base mq480:leading-[22px]">
-                      Question text goes here
-                    </h3>
-                    <Image
-                      className="h-8 w-8"
-                      width={32}
-                      height={32}
-                      alt=""
-                      src="/mynauiplus-1.svg"
-                    />
-                  </div>
-                  <div className="hidden accordion__content">
-                    <p className="leading-[150%]">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Suspendisse varius enim in eros elementum tristique. Duis
-                      cursus, mi quis viverra ornare, eros dolor interdum nulla,
-                      ut commodo diam libero vitae erat. Aenean faucibus nibh et
-                      justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae
-                      risus tristique posuere.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <Image
-            className="h-[656px] w-[609px] object-cover mq480:w-full"
-            loading="lazy"
-            width={688}
-            height={656}
-            alt=""
-            src="/image-container@2x.png"
-          />
-        </div>
+        <FaqComponentHome />
       </section>
-
       <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 pb-[60px] mq480:pb-[40px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
         <div className="flex-1 flex flex-row items-center justify-center max-w-full [row-gap:20px] mq1250:flex-wrap">
           <ImagePlaceholders

@@ -13,6 +13,8 @@ import EyeGlassesMblMenu from "./eye-glasses-mbl-menu";
 import ContactLensMblMenu from "./contact-lens-mbl-menu";
 
 const FrameComponent1 = memo(({ className = "" }) => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMblSubMenuOpen, setIsMblSubMenuOpen] = useState(false);
   const [isMblBrandSubMenuOpen, setIsMblBrandSubMenuOpen] = useState(false);
@@ -173,14 +175,24 @@ const FrameComponent1 = memo(({ className = "" }) => {
               </div>
             </nav>
           </div>
-          <div className="w-44 flex flex-row items-start justify-start">
+          <div className="w-44 flex flex-row items-start justify-start relative">
+            {isSearchOpen && (
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="absolute left-0 top-[100%] w-48 h-11 px-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:border-blue-500 transition-all duration-300"
+              />
+            )}
             <Image
-              className="h-11 w-11 relative"
+              className="h-11 w-11 cursor-pointer"
               loading="lazy"
               width={44}
               height={44}
-              alt=""
+              alt="Search"
               src="/search.svg"
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
             />
             <Image
               className="h-11 w-11 relative"
