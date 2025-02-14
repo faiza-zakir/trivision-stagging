@@ -52,22 +52,34 @@ const Footer = memo(
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/Brand/blancia")}
+                  >
                     Brands
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/Sunglasses/Sunglasses")}
+                  >
                     Sunglasses
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/Eyeglasses/EYEGLASSES")}
+                  >
                     Eyeglasses
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/ContactLenses/bella")}
+                  >
                     Contact Lens
                   </div>
                 </div>
@@ -89,12 +101,18 @@ const Footer = memo(
               </div>
               <div className="self-stretch flex flex-col items-start justify-start text-sm">
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/about")}
+                  >
                     About Us
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/blog")}
+                  >
                     Blogs
                   </div>
                 </div>
@@ -111,7 +129,10 @@ const Footer = memo(
               </div>
               <div className="self-stretch flex flex-col items-start justify-start text-sm">
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/contact")}
+                  >
                     Contact Us
                   </div>
                 </div>
@@ -126,7 +147,10 @@ const Footer = memo(
                   </div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
-                  <div className="flex-1 relative leading-[150%] font-medium">
+                  <div
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
+                    onClick={() => handleNavigation("/login")}
+                  >
                     My Account
                   </div>
                 </div>
@@ -139,19 +163,19 @@ const Footer = memo(
               <div className="self-stretch flex flex-col items-start justify-start text-sm cursor-pointer ">
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
                   <div
-                    className="flex-1 relative leading-[150%] font-medium"
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
                     onClick={() => handleNavigation("/Shipping&Delevery")}
                   >{`Shipping & Delivery`}</div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0 cursor-pointer ">
                   <div
-                    className="flex-1 relative leading-[150%] font-medium"
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
                     onClick={() => handleNavigation("/Return&Exchange")}
                   >{`Returns & Exchange`}</div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0 cursor-pointer">
                   <div
-                    className="flex-1 relative leading-[150%] font-medium"
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
                     onClick={() => handleNavigation("/Priviacy&Policy")}
                   >
                     Privacy Policy
@@ -159,7 +183,7 @@ const Footer = memo(
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0 cursor-pointer">
                   <div
-                    className="flex-1 relative leading-[150%] font-medium"
+                    className="flex-1 relative leading-[150%] font-medium cursor-pointer"
                     onClick={() => handleNavigation("/Term&Condition")}
                   >
                     Terms of Service

@@ -125,10 +125,10 @@ const FrameComponent1 = memo(({ className = "" }) => {
         />
       </div>
       <div className="self-stretch flex-1 bg-whitesmoke-100 border-gray-800 border-b-[1px] border-solid box-border overflow-hidden flex flex-row items-start justify-start pt-[18px] px-20 pb-4 max-w-full z-[20] text-left text-smi text-black font-inter mq750:pl-10 mq750:pr-10 mq750:box-border">
-        <div className="flex-1 flex flex-row items-center justify-center gap-[70.7px] max-w-full mq991:gap-[18px] mq750:gap-[15px]">
+        <div className="flex-1 flex flex-row items-center justify-center gap-[70.7px] max-w-full mq1410:gap-5 mq991:gap-[18px] mq750:gap-[15px]">
           <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
             <Image
-              className="self-stretch h-9 relative max-w-full overflow-hidden shrink-0 object-cover mq750:object-contain w-[186px] mq480:max-w-fit mq480:w-[100px]"
+              className="self-stretch h-9 relative max-w-full overflow-hidden shrink-0 object-contain mq750:object-contain w-[186px] mq480:max-w-fit mq480:w-[100px]"
               loading="lazy"
               width={186}
               height={36}
