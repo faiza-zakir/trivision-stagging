@@ -24,6 +24,9 @@ const Footer = memo(
     const handleNavigation = (path) => {
       router.push(path);
     };
+    const handleSocialIcons = (path) => {
+      window.open(path, "_blank", "noopener,noreferrer");
+    };
 
     return (
       <footer
@@ -226,40 +229,55 @@ const Footer = memo(
             </div>
             <div className="flex flex-row items-start justify-start gap-3">
               <Image
-                className="w-6 relative h-6 overflow-hidden shrink-0"
+                className="w-6 relative h-6 overflow-hidden shrink-0 cursor-pointer"
                 width={24}
                 height={24}
                 alt=""
                 src="/icon--facebook.svg"
+                onClick={() =>
+                  handleSocialIcons(
+                    "https://www.facebook.com/trivisionoptical1/"
+                  )
+                }
               />
               <Image
-                className="w-6 relative h-6 overflow-hidden shrink-0"
+                className="w-6 relative h-6 overflow-hidden shrink-0 cursor-pointer"
                 width={24}
                 height={24}
                 alt=""
                 src="/icon--instagram.svg"
+                onClick={() =>
+                  handleSocialIcons(
+                    "https://www.instagram.com/trivisionoptical/"
+                  )
+                }
               />
               <Image
-                className="w-6 relative h-6 overflow-hidden shrink-0"
+                className="w-6 relative h-6 overflow-hidden shrink-0 cursor-pointer"
                 width={24}
                 height={24}
                 alt=""
                 src="/icon--x.svg"
+                onClick={() =>
+                  handleSocialIcons(
+                    "https://www.pinterest.com/trivisionoptical/"
+                  )
+                }
               />
-              <Image
-                className="w-6 relative h-6 overflow-hidden shrink-0"
+              {/* <Image
+                className="w-6 relative h-6 overflow-hidden shrink-0 cursor-pointer"
                 width={24}
                 height={24}
                 alt=""
                 src="/icon--linkedin.svg"
-              />
-              <Image
-                className="w-6 relative h-6 overflow-hidden shrink-0"
+              /> */}
+              {/* <Image
+                className="w-6 relative h-6 overflow-hidden shrink-0 cursor-pointer"
                 width={24}
                 height={24}
                 alt=""
                 src={iconYoutube}
-              />
+              /> */}
             </div>
           </div>
         </div>

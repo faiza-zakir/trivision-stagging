@@ -20,7 +20,9 @@ const JoinWrapper = memo(
         alignSelf: joinWrapperAlignSelf,
       };
     }, [joinWrapperPadding, joinWrapperFlex, joinWrapperAlignSelf]);
-
+    const handleSocialIcons = (path) => {
+      window.open(path, "_blank", "noopener,noreferrer");
+    };
     return (
       <div
         className={`flex flex-col items-start justify-start py-0 pl-0 box-border gap-10 max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-5 mq480:gap-10 ${className}`}
@@ -32,7 +34,14 @@ const JoinWrapper = memo(
           </h1>
           <div className="flex flex-col items-start justify-start  pt-1 px-0 pb-0 text-center text-base text-background-color-primary">
             <div className="self-stretch bg-black overflow-hidden flex flex-row items-start justify-start py-2 pl-6 pr-[23px]">
-              <div className="flex-1 relative leading-[150%] font-medium inline-block min-w-[102px]">
+              <div
+                className="flex-1 relative leading-[150%] font-medium inline-block min-w-[102px] cursor-pointer"
+                onClick={() =>
+                  handleSocialIcons(
+                    "https://www.instagram.com/trivisionoptical/"
+                  )
+                }
+              >
                 FOLLOW US
               </div>
             </div>
