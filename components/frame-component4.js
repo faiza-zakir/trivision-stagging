@@ -20,7 +20,7 @@ const FrameComponent4 = memo(({ className = "", product }) => {
           <div className="flex flex-row items-center justify-center pt-11 px-0 pb-0 box-border max-w-full mq750:pt-[29px] mq750:box-border mq750:min-w-full">
             <div className="self-stretch flex flex-col items-center justify-center gap-10 max-w-full mq750:gap-5">
               <div className="self-stretch flex flex-col items-center justify-center py-0 px-5 box-border max-w-full">
-                <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] text-center max-w-full mq750:text-13xl mq750:leading-[38px] mq480:text-5xl mq480:leading-[29px] mq480:text-xl">
+                <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] text-center max-w-full mq480:text-xl mq750:text-13xl mq750:leading-[38px] mq480:text-5xl mq480:leading-[29px] mq480:text-xl">
                   Frequently Asked Questions
                 </h1>
               </div>
