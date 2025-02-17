@@ -58,7 +58,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
-      setSearchSuggestions(data || []);
+      setSearchSuggestions(data?.products || []);
     } catch (error) {
       console.error("Error fetching suggestions:", error);
     }
@@ -149,7 +149,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
 
   return (
     <header
-      className={`self-stretch flex flex-col items-start justify-start max-w-full text-center text-xs text-background-color-primary font-h4-32 ${className}`}
+      className={`self-stretch relative flex flex-col items-start justify-start max-w-full text-center text-xs text-background-color-primary font-h4-32 ${className}`}
     >
       <div className="self-stretch bg-black overflow-hidden flex flex-row items-start justify-between py-[13px] px-10 gap-5 z-20">
         <Image
@@ -174,7 +174,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
         />
       </div>
       <div className="self-stretch flex-1 bg-whitesmoke-100 border-gray-800 border-b-[1px] border-solid box-border overflow-hidden flex flex-row items-start justify-start pt-[18px] px-20 pb-4 max-w-full z-[20] text-left text-smi text-black font-inter mq750:pl-10 mq750:pr-10 mq750:box-border">
-        <div className="flex-1 flex flex-row items-center justify-center gap-[70.7px] max-w-full mq1410:gap-5 mq991:gap-[18px] mq750:gap-[15px]">
+        <div className="flex-1 flex flex-row relative items-center justify-center gap-[70.7px] max-w-full mq1410:gap-5 mq991:gap-[18px] mq750:gap-[15px]">
           <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
             <Image
               className="self-stretch h-9 relative max-w-full overflow-hidden shrink-0 object-contain mq750:object-contain w-[186px] mq480:max-w-fit mq480:w-[100px] cursor-pointer"
@@ -223,14 +223,15 @@ const FrameComponent1 = memo(({ className = "" }) => {
               </div>
             </nav>
           </div>
-          <div className="w-44 flex flex-row items-start justify-start relative z-1">
+          <div className="w-44 flex flex-row items-start justify-start relative">
             {isSearchOpen && (
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                className="absolute left-10 top-0 z-2 w-48 h-11 px-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:border-blue-500 transition-all duration-300"
+                className="absolute left-10 top-0 w-48 h-11 px-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:border-blue-500 transition-all duration-300"
+                style={{ zIndex: 2 }}
               />
             )}
             <Image
@@ -296,22 +297,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
               </a>
             </div>
           </div>
-          {/* Suggestions Dropdown */}
-          {searchSuggestions.length > 0 && (
-            <div className="absolute w-48 bg-white border border-gray-300 shadow-md mt-1">
-              <ul className="max-h-60 overflow-y-auto">
-                {searchSuggestions.map((product) => (
-                  <li
-                    key={product.id}
-                    className="p-2 cursor-pointer hover:bg-gray-200"
-                    onClick={() => handleNavigation(`/product/${product.id}`)} // Navigate to product detail page
-                  >
-                    {product.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+
           {/* Mobile Hamburger */}
           <button
             className="nav_mbl_menu_btn bg-transparent cursor-pointer"
@@ -321,6 +307,27 @@ const FrameComponent1 = memo(({ className = "" }) => {
           </button>
         </div>
       </div>
+      {/* Suggestions Dropdown */}
+      {searchSuggestions?.length > 0 && (
+        <div
+          className="absolute w-[30%] right-0 top-[100%] bg-white border border-gray-300 shadow-md rounded-md"
+          style={{ zIndex: 2 }}
+        >
+          <ul className="max-h-60 overflow-y-auto p-0">
+            {searchSuggestions?.map((product) => (
+              <li
+                key={product?._id}
+                className="p-3 mb-2 mx-2 cursor-pointer text-sm text-black bg-gray-500"
+                onClick={() =>
+                  handleNavigation(`/ProductDetails/${product?.slug}`)
+                } // Navigate to product detail page
+              >
+                {product?.product_name_short}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-30 transform ${
