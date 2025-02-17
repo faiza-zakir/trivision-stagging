@@ -83,7 +83,7 @@ const Content = memo(({ className = "" }) => {
         contentItemsTop="1500px"
         emptyContent="/5-4@2x.png"
       />
-      <div className="absolute top-[1980px] left-[628.5px] bg-black w-[183px] overflow-hidden flex flex-row items-center justify-center py-2 px-[39px] box-border whitespace-nowrap text-center text-base text-background-color-primary">
+      <div className="absolute top-[1980px] left-[628.5px] bg-black w-[183px] overflow-hidden flex flex-row items-center justify-center py-2 px-[39px] box-border whitespace-nowrap text-center text-base text-background-color-primary cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
         <div className="flex-1 relative leading-[150%] font-medium">
           LOAD MORE
         </div>

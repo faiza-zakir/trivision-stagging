@@ -117,18 +117,18 @@ const CustomerAccount = () => {
                   onChange={handleChange}
                 />
                 <div className="self-stretch flex flex-row items-start justify-start gap-4 mq750:flex-wrap">
-                  <div className="flex-1 border-black border-[1px] border-solid box-border overflow-hidden flex flex-row items-center justify-center py-1.5 px-4 min-w-[151px] min-h-[40px] mq480:flex-1">
-                    <div
-                      className="flex-1 relative text-base leading-[150%] font-medium font-h4-32 text-background-color-black text-center"
-                      onClick={handleNavigation}
-                    >
+                  <div
+                    className="flex-1 border-black border-[1px] border-solid box-border overflow-hidden flex flex-row items-center justify-center py-1.5 px-4 min-w-[151px] min-h-[40px] mq480:flex-1 cursor-pointer hover:bg-black hover:text-white hover:border-[1px] hover:border-solid transition-all duration-300"
+                    onClick={handleNavigation}
+                  >
+                    <div className="flex-1 relative text-base leading-[150%] font-medium font-h4-32 text-background-color-black text-center">
                       REGISTER
                     </div>
                   </div>
                   <div className="flex-1 bg-black overflow-hidden flex flex-row items-center justify-center">
                     <button
                       type="submit"
-                      className="flex-1 bg-black text-white relative text-base leading-[150%] py-2 px-4 font-medium font-colour-white font-h4-32 text-center box-border min-w-[151px]"
+                      className="flex-1 bg-black text-white relative text-base leading-[150%] py-2 px-4 font-medium font-colour-white font-h4-32 text-center box-border min-w-[151px] cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300"
                       disabled={isLoading}
                     >
                       {isLoading ? "LOADING..." : "LOGIN"}

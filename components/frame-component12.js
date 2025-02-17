@@ -252,7 +252,7 @@ const FrameComponent12 = memo(({ className = "" }) => {
                     <div className="absolute w-0 h-0" />
                   </div>
                 </div>
-                <div className="bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] text-center text-base text-background-color-primary">
+                <div className="bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] text-center text-base text-background-color-primary cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
                   <div className="flex-1 relative leading-[150%] font-medium inline-block min-w-[84px]">
                     READ ALL
                   </div>

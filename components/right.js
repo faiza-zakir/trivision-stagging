@@ -56,14 +56,14 @@ const Right = memo(({ className = "" }) => {
           </div>
         </div>
       </div>
-      <div className="self-stretch bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[190px] text-center text-background-color-primary mq480:pl-[95px] mq480:pr-[95px] mq480:box-border">
-        <div
-          className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-          onClick={() => {
-            localStorage.removeItem("token"); // Remove token from localStorage
-            router.push("/"); // Redirect to home page
-          }}
-        >
+      <div
+        className="self-stretch bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[190px] text-center text-background-color-primary mq480:pl-[95px] mq480:pr-[95px] mq480:box-border cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300"
+        onClick={() => {
+          localStorage.removeItem("token"); // Remove token from localStorage
+          router.push("/"); // Redirect to home page
+        }}
+      >
+        <div className="flex-1 relative leading-[150%] font-medium">
           LOG OUT
         </div>
       </div>

@@ -192,7 +192,7 @@ const SunglassesListing = () => {
             </div>
             <div className="self-stretch flex flex-col items-center justify-start py-0 px-5 gap-6 text-center text-background-color-primary">
               <div className="w-[305px] flex flex-row items-start justify-center gap-4">
-                <div className="flex-1 bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px]">
+                <div className="flex-1 bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
                   <div className="flex-1 relative leading-[150%] font-medium">
                     LOAD MORE PRODUCTS
                   </div>
@@ -402,7 +402,7 @@ const SunglassesListing = () => {
                   <div className="absolute w-0 h-0" />
                 </div>
               </div>
-              <div className="bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] text-center text-base text-background-color-primary">
+              <div className="bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] text-center text-base text-background-color-primary cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
                 <div className="flex-1 relative leading-[150%] font-medium inline-block min-w-[84px]">
                   READ ALL
                 </div>

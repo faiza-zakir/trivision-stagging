@@ -360,18 +360,18 @@ const FrameComponent13 = memo(({ className = "", products }) => {
                 />
               </div>
               <div className="self-stretch flex flex-row items-start justify-center gap-4 mq750:flex-wrap">
-                <div className="flex-[0.7133] border-black border-[1px] border-solid box-border overflow-hidden flex flex-row items-start justify-start py-1.5 pl-[68px] pr-[65px] min-w-[157px] min-h-[40px] mq480:flex-1">
+                <div className="flex-[0.7133] border-black border-[1px] border-solid box-border overflow-hidden flex flex-row items-start justify-start py-1.5 pl-[68px] pr-[65px] min-w-[157px] min-h-[40px] mq480:flex-1 cursor-pointer hover:bg-black hover:text-white hover:border-[1px] hover:border-solid transition-all duration-300">
                   <div className="flex-1 relative leading-[150%] font-medium">
                     ADD TO BAG
                   </div>
                 </div>
-                <div className="flex-1 border-black border-[1px] border-solid box-border overflow-hidden flex flex-row items-start justify-start py-1.5 px-[45px] min-w-[157px] min-h-[40px]">
+                <div className="flex-1 border-black border-[1px] border-solid box-border overflow-hidden flex flex-row items-start justify-start py-1.5 px-[45px] min-w-[157px] min-h-[40px] cursor-pointer hover:bg-black hover:text-white hover:border-[1px] hover:border-solid transition-all duration-300">
                   <div className="flex-1 relative leading-[150%] font-medium">
                     ADD TO WISHLIST
                   </div>
                 </div>
               </div>
-              <div className="bg-black overflow-hidden flex flex-row items-start justify-start py-2 pl-[199px] pr-[198px] text-background-color-primary mq480:pl-5 mq480:pr-5 mq480:box-border mq750:pl-[99px] mq750:pr-[99px] mq750:box-border">
+              <div className="bg-black overflow-hidden flex flex-row items-start justify-start py-2 pl-[199px] pr-[198px] text-background-color-primary mq480:pl-5 mq480:pr-5 mq480:box-border mq750:pl-[99px] mq750:pr-[99px] mq750:box-border cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
                 <div className="relative leading-[150%] font-medium">
                   BUY IT NOW
                 </div>

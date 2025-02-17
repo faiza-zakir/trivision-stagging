@@ -87,7 +87,7 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
           <div className="self-stretch flex flex-col items-center justify-start py-0 px-5 gap-6 text-center text-background-color-primary">
             <div className="w-[305px] flex flex-row items-start justify-center gap-4">
               <div
-                className="flex-1 bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] cursor-pointer"
+                className="flex-1 bg-black overflow-hidden flex flex-row items-center justify-center py-2 px-[23px] cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300"
                 onClick={loadMoreProducts}
               >
                 <div className="flex-1 relative leading-[150%] font-medium">
