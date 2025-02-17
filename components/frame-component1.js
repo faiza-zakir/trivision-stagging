@@ -130,12 +130,13 @@ const FrameComponent1 = memo(({ className = "" }) => {
         <div className="flex-1 flex flex-row items-center justify-center gap-[70.7px] max-w-full mq1410:gap-5 mq991:gap-[18px] mq750:gap-[15px]">
           <div className="flex flex-col items-start justify-start pt-1 px-0 pb-0">
             <Image
-              className="self-stretch h-9 relative max-w-full overflow-hidden shrink-0 object-contain mq750:object-contain w-[186px] mq480:max-w-fit mq480:w-[100px]"
+              className="self-stretch h-9 relative max-w-full overflow-hidden shrink-0 object-contain mq750:object-contain w-[186px] mq480:max-w-fit mq480:w-[100px] cursor-pointer"
               loading="lazy"
               width={186}
               height={36}
               alt=""
               src="/logo@2x.png"
+              onClick={() => handleNavigation("/")}
             />
           </div>
           <div className="w-[777px] flex flex-col items-start justify-start pt-[11.5px] px-0 pb-0 box-border max-w-full mq991:w-0 mq991:hidden">
@@ -195,7 +196,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
               onClick={() => setIsSearchOpen(!isSearchOpen)}
             />
             <Image
-              className="h-11 w-11"
+              className="h-11 w-11 cursor-pointer"
               loading="lazy"
               width={44}
               height={44}
@@ -211,7 +212,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
               }}
             />
             <Image
-              className="h-11 w-11"
+              className="h-11 w-11 cursor-pointer"
               loading="lazy"
               width={44}
               height={44}
@@ -228,7 +229,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
             />
             <div className="h-11 w-11 flex-1 relative z-[1]">
               <Image
-                className="absolute top-[calc(50%_-_11px)] left-[calc(50%_-_11px)] w-[22px] h-[22px]"
+                className="absolute top-[calc(50%_-_11px)] left-[calc(50%_-_11px)] w-[22px] h-[22px] cursor-pointer"
                 loading="lazy"
                 width={22}
                 height={22}
