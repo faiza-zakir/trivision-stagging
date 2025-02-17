@@ -68,7 +68,7 @@ const ProductListing = ({ products }) => {
     <>
       <FrameComponent1 />
       <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[34px] leading-[normal] tracking-[normal] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[17px]">
-        <div className="w-full bg-[url('/brandBanner.jpg')] bg-cover bg-no-repeat bg-center h-[50vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
+        <div className="w-full bg-[url('/brandBanner.jpg')] bg-cover bg-no-repeat bg-center h-[75vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
         <section className="w-[1440px] flex flex-col items-center justify-center pt-0 px-20 pb-[26px] box-border max-w-full mq750:pl-10 mq750:pr-10 mq750:box-border">
           <div
             className="self-stretch flex flex-col items-center justify-center text-left py-0 pl-px pr-0"

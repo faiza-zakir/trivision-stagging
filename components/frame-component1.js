@@ -15,6 +15,7 @@ import ContactLensMblMenu from "./contact-lens-mbl-menu";
 const FrameComponent1 = memo(({ className = "" }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMblSubMenuOpen, setIsMblSubMenuOpen] = useState(false);
   const [isMblBrandSubMenuOpen, setIsMblBrandSubMenuOpen] = useState(false);
@@ -30,6 +31,52 @@ const FrameComponent1 = memo(({ className = "" }) => {
   const [isEyeglassesMenuOpen, setIsEyeglassesMenuOpen] = useState(false);
   const router = useRouter();
 
+  // search func. start
+  // Debounce function to limit the API calls
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
+  // Function to fetch search suggestions from the API
+  const fetchSuggestions = async (query) => {
+    if (!query) {
+      setSearchSuggestions([]);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `https://apitrivsion.prismcloudhosting.com/api/products?search=${query}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      setSearchSuggestions(data || []);
+    } catch (error) {
+      console.error("Error fetching suggestions:", error);
+    }
+  };
+
+  // Function to handle the input change and update searchQuery immediately
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    debouncedFetchSuggestions(query);
+  };
+
+  // Use debounce for the API request
+  const debouncedFetchSuggestions = debounce((query) => {
+    fetchSuggestions(query);
+  }, 500);
+
+  // Function to navigate to a specific route
   const handleNavigation = (path) => {
     router.push(path);
     setIsMobileMenuOpen(false);
@@ -182,7 +229,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={handleSearchChange}
                 className="absolute left-10 top-0 z-2 w-48 h-11 px-3 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:border-blue-500 transition-all duration-300"
               />
             )}
@@ -249,6 +296,22 @@ const FrameComponent1 = memo(({ className = "" }) => {
               </a>
             </div>
           </div>
+          {/* Suggestions Dropdown */}
+          {searchSuggestions.length > 0 && (
+            <div className="absolute w-48 bg-white border border-gray-300 shadow-md mt-1">
+              <ul className="max-h-60 overflow-y-auto">
+                {searchSuggestions.map((product) => (
+                  <li
+                    key={product.id}
+                    className="p-2 cursor-pointer hover:bg-gray-200"
+                    onClick={() => handleNavigation(`/product/${product.id}`)} // Navigate to product detail page
+                  >
+                    {product.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {/* Mobile Hamburger */}
           <button
             className="nav_mbl_menu_btn bg-transparent cursor-pointer"
