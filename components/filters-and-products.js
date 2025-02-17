@@ -2,10 +2,12 @@ import { memo, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import ProductCards from "./product-cards";
+import FiltersSidebar from "./filters-sidebar";
 import PropTypes from "prop-types";
 
 const FiltersAndProducts = memo(({ className = "", product = [] }) => {
   const router = useRouter();
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(24);
   const [sortOption, setSortOption] = useState("date"); // Default sorting by latest
 
@@ -42,7 +44,10 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
     >
       <div className="self-stretch flex flex-col items-start justify-start gap-10 mq750:gap-5">
         <div className="self-stretch flex flex-row items-start justify-between mq480:justify-center gap-5 mq480:flex-wrap">
-          <div className="h-10 border-black border-[1px] border-solid box-border flex flex-row items-center justify-center py-1.5 pl-4 pr-[13px] gap-2 cursor-pointer">
+          <div
+            className="h-10 border-black border-[1px] border-solid box-border flex flex-row items-center justify-center py-1.5 pl-4 pr-[13px] gap-2 cursor-pointer"
+            onClick={() => setSidebarOpen(true)}
+          >
             <Image
               className="h-6 w-6 relative overflow-hidden shrink-0 object-contain mq480:h-4 mq480:w-4"
               loading="lazy"
@@ -55,6 +60,19 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
               All Filters
             </div>
           </div>
+          {/* Sidebar Overlay (Click outside to close) */}
+          {isSidebarOpen && (
+            <div
+              className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40"
+              onClick={() => setSidebarOpen(false)}
+            />
+          )}
+
+          {/* Sidebar Component */}
+          <FiltersSidebar
+            isOpen={isSidebarOpen}
+            onClose={() => setSidebarOpen(false)}
+          />
           <div className="flex flex-col pt-2">
             <div className="flex flex-row items-center gap-3">
               <label className="leading-[150%] font-medium mq480:text-sm">
