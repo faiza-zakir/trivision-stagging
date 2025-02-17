@@ -5,8 +5,13 @@ import ProductCards from "../product-cards";
 import PropTypes from "prop-types";
 
 const FiltersAndProducts = memo(({ className = "", product = [] }) => {
-  const [visibleProducts, setVisibleProducts] = useState(24);
   const router = useRouter();
+  const [visibleProducts, setVisibleProducts] = useState(24);
+  const [sortOption, setSortOption] = useState("date"); // Default sorting by latest
+
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
 
   const loadMoreProducts = () => {
     setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 24);
@@ -20,12 +25,23 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
     router.push(`/ContactLensesDetails/${slug}`);
   };
 
+  // Sorting logic
+  const sortedProducts = [...product].sort((a, b) => {
+    if (sortOption === "price") return a?.retail_price - b?.retail_price; // Low to High
+    if (sortOption === "price-desc") return b?.retail_price - a?.retail_price; // High to Low
+    if (sortOption === "date")
+      return new Date(b?.createdAt) - new Date(a?.createdAt); // Newest first
+    if (sortOption === "brand")
+      return (a?.brand?.slug || "")?.localeCompare(b?.brand?.slug || ""); // Sort alphabetically, handling undefined brands
+    return 0;
+  });
+
   return (
     <div
       className={`flex-1 flex flex-col items-start justify-start gap-[120px] max-w-full text-left text-base text-black font-h4-32 mq750:gap-[60px] mq480:gap-[30px] ${className}`}
     >
       <div className="self-stretch flex flex-col items-start justify-start gap-10 mq750:gap-5">
-        {/* <div className="self-stretch flex flex-row items-start justify-between gap-5 mq480:flex-wrap">
+        <div className="self-stretch flex flex-row items-start justify-between mq480:justify-center gap-5 mq480:flex-wrap">
           <div className="h-10 border-black border-[1px] border-solid box-border flex flex-row items-center justify-center py-1.5 pl-4 pr-[13px] gap-2">
             <Image
               className="h-6 w-6 relative overflow-hidden shrink-0 object-contain mq480:h-4 mq480:w-4"
@@ -39,23 +55,28 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
               All Filters
             </div>
           </div>
-          <div className="flex flex-col items-start justify-start pt-2 px-0 pb-0">
-            <div className="flex flex-row items-start justify-start gap-2">
-              <div className="relative leading-[150%] font-medium mq480:text-sm">
+          <div className="flex flex-col pt-2">
+            <div className="flex flex-row items-center gap-3">
+              <label className="leading-[150%] font-medium mq480:text-sm">
                 Sort By
-              </div>
-              <Image
-                className="h-6 w-6 relative overflow-hidden shrink-0 object-contain mq480:h-5 mq480:w-5"
-                width={24}
-                height={24}
-                alt=""
-                src="/iconamoonarrowup2light@2x.png"
-              />
+              </label>
+              <select
+                name="orderby"
+                className="border border-gray-300 rounded p-2 text-sm cursor-pointer"
+                value={sortOption}
+                onChange={handleSortChange}
+              >
+                <option value="popularity">Sort by popularity</option>
+                <option value="date">Sort by latest</option>
+                <option value="price">Sort by price: low to high</option>
+                <option value="price-desc">Sort by price: high to low</option>
+                <option value="brand">Sort by brand</option>
+              </select>
             </div>
           </div>
-        </div> */}
+        </div>
         <div className="self-stretch flex flex-row items-center justify-center flex-wrap content-start gap-x-2 gap-y-6">
-          {product.slice(0, visibleProducts).map((productItem) => {
+          {sortedProducts?.slice(0, visibleProducts).map((productItem) => {
             const firstImageUrl = productItem?.product_images[0] || "";
             console.log(firstImageUrl, "Does Image Is coming till here");
 

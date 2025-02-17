@@ -5,9 +5,9 @@ import ProductCards from "./product-cards";
 import PropTypes from "prop-types";
 
 const FiltersAndProducts = memo(({ className = "", product = [] }) => {
+  const router = useRouter();
   const [visibleProducts, setVisibleProducts] = useState(24);
   const [sortOption, setSortOption] = useState("date"); // Default sorting by latest
-  const router = useRouter();
 
   const handleSortChange = (e) => {
     setSortOption(e.target.value);
