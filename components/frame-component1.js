@@ -372,7 +372,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
       </div>
       {/* Desktop Menus */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${
+        className={`fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg z-[30] transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
       >
@@ -387,7 +387,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${
+        className={`fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg z-[30] transform ${
           isEyeglassesMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}
       >

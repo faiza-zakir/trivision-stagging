@@ -88,24 +88,42 @@ const ContactLensMenu = memo(({ className = "" }) => {
 
         {/* Right Column: Image Grid */}
         <div className="flex flex-col items-center justify-center gap-4">
-          {[1, 2].map((row) => (
-            <div
-              key={row}
-              className="flex flex-row items-center justify-center gap-4"
-            >
-              {[1, 2].map((col) => (
-                <Image
-                  key={col}
-                  className="h-[152px] w-auto relative max-w-full overflow-hidden object-cover min-w-[212px]"
-                  loading="lazy"
-                  width={326}
-                  height={152}
-                  alt=""
-                  src="/6@2x.png"
-                />
-              ))}
-            </div>
-          ))}
+          <div className="flex flex-row items-center justify-center gap-4">
+            <Image
+              className="h-[152px] w-auto relative max-w-full overflow-hidden object-cover min-w-[212px]"
+              loading="lazy"
+              width={326}
+              height={152}
+              alt=""
+              src="/lens-menu1.jpg"
+            />
+            <Image
+              className="h-[152px] w-auto relative max-w-full overflow-hidden object-cover min-w-[212px]"
+              loading="lazy"
+              width={326}
+              height={152}
+              alt=""
+              src="/lens-menu2.jpg"
+            />
+          </div>
+          <div className="flex flex-row items-center justify-center gap-4">
+            <Image
+              className="h-[152px] w-auto relative max-w-full overflow-hidden object-cover min-w-[212px]"
+              loading="lazy"
+              width={326}
+              height={152}
+              alt=""
+              src="/lens-menu3.jpg"
+            />
+            <Image
+              className="h-[152px] w-auto relative max-w-full overflow-hidden object-cover min-w-[212px]"
+              loading="lazy"
+              width={326}
+              height={152}
+              alt=""
+              src="/lens-menu4.jpg"
+            />
+          </div>
         </div>
       </section>
     </div>
