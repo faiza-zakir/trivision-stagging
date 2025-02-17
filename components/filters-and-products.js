@@ -27,10 +27,10 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
 
   // Sorting logic
   const sortedProducts = [...product].sort((a, b) => {
-    if (sortOption === "price") return a.retail_price - b.retail_price; // Low to High
-    if (sortOption === "price-desc") return b.retail_price - a.retail_price; // High to Low
+    if (sortOption === "price") return a?.retail_price - b?.retail_price; // Low to High
+    if (sortOption === "price-desc") return b?.retail_price - a?.retail_price; // High to Low
     if (sortOption === "date")
-      return new Date(b.createdAt) - new Date(a.createdAt); // Newest first
+      return new Date(b?.createdAt) - new Date(a?.createdAt); // Newest first
     if (sortOption === "brand")
       return (a?.brand?.slug || "")?.localeCompare(b?.brand?.slug || ""); // Sort alphabetically, handling undefined brands
     return 0;
