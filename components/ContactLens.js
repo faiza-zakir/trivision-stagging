@@ -47,7 +47,7 @@ const ContactLensMenu = memo(({ className = "" }) => {
       className={`z-[9999] w-[1440px] bg-black-100 max-w-full overflow-hidden flex flex-col items-center justify-center p-10 box-border leading-[normal] tracking-[normal] ${className}`}
     >
       {/* Main Flex Container */}
-      <section className="w-full flex flex-row items-start justify-center gap-10 text-sm text-black font-h4-32">
+      <section className="w-full flex flex-row items-start justify-between gap-10 text-sm text-black font-h4-32">
         {/* Left Column: Brand Categories */}
         <div className="flex flex-row flex-wrap items-start justify-start gap-10 min-w-[600px]">
           {/* Colored Contact Lenses */}

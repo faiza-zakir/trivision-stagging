@@ -145,7 +145,7 @@ const CustomerAccount = () => {
           width={610}
           height={740}
           alt="Placeholder"
-          src="/placeholder-image@2x.png"
+          src="/loginbanner.jpeg"
         />
       </main>
     </div>

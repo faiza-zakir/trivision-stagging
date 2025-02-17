@@ -110,7 +110,7 @@ const Cart = () => {
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-start justify-start leading-[normal] tracking-[normal]">
       <section className="self-stretch flex flex-col items-start justify-start max-w-full text-center text-21xl text-background-color-primary font-h4-32">
         <FrameComponent1 />
-        <div className="self-stretch overflow-hidden flex flex-col items-start justify-end pt-[340px] px-[284px] pb-[60px] gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] mt-[-80px] mq450:pl-5 mq450:pr-5 mq450:box-border mq750:pl-[142px] mq750:pr-[142px] mq750:pb-[39px] mq750:box-border">
+        <div className="self-stretch overflow-hidden flex flex-col items-start justify-end pt-[340px] px-[284px] pb-[60px] gap-6 bg-[url('/cartBanner.jpg')] bg-cover bg-no-repeat bg-[top] mt-[-80px] mq450:pl-5 mq450:pr-5 mq450:box-border mq750:pl-[142px] mq750:pr-[142px] mq750:pb-[39px] mq750:box-border">
           <div className="self-stretch flex flex-row items-start justify-start py-0 pl-[355px] pr-[354px] mq1050:pl-[177px] mq1050:pr-[177px] mq1050:box-border mq450:pl-5 mq450:pr-5 mq450:box-border">
             <h1 className="m-0 flex-1 relative text-inherit leading-[120%] font-medium font-[inherit] mq450:text-5xl mq450:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
               Cart

@@ -16,7 +16,7 @@ const BrandMenu = memo(({ className = "", brands }) => {
       className={`z-[9999] w-[1440px] bg-black-100 max-w-full overflow-hidden flex flex-col items-center justify-center p-10 box-border leading-[normal] tracking-[normal] ${className}`}
     >
       <section className="self-stretch flex flex-row items-center justify-center flex-wrap content-start gap-6 max-w-full text-center text-sm text-black font-h4-32">
-        <div className="flex-1 flex flex-wrap items-center justify-center gap-6">
+        <div className="flex-1 flex flex-wrap items-center justify-start gap-8">
           {brands.map((brand, index) => (
             <div
               key={index}
@@ -49,7 +49,7 @@ const BrandMenu = memo(({ className = "", brands }) => {
               width={268}
               height={226}
               alt=""
-              src="/6@2x.png"
+              src="/menu2Img.png"
             />
           </div>
         </div>

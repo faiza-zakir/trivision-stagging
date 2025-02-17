@@ -6,7 +6,7 @@ import FrameComponent1 from "./frame-component1";
 const Banner1 = memo(({ className = "" }) => {
   return (
     <div
-      className={`self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[60px] box-border gap-[260px] bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full text-center text-21xl text-background-color-primary font-h4-32 mq750:gap-[130px] mq750:pb-[39px] mq750:box-border mq480:gap-[65px] ${className}`}
+      className={`self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[60px] box-border gap-[260px] bg-[url('/accountBanner.jpg')] bg-cover bg-no-repeat bg-[top] max-w-full text-center text-21xl text-background-color-primary font-h4-32 mq750:gap-[130px] mq750:pb-[39px] mq750:box-border mq480:gap-[65px] ${className}`}
     >
       <FrameComponent1 />
       <div className="self-stretch flex flex-row items-start justify-center py-0 px-5 box-border max-w-full">

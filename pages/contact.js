@@ -15,7 +15,7 @@ const Contact = () => {
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border leading-[normal] tracking-[normal] mq750:gap-[17px]">
       <FrameComponent1 />
       <section className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full text-center text-21xl text-background-color-primary font-h4-32">
-        <div className="flex-1 overflow-hidden flex flex-col items-start justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full mq480:pl-5 mq480:pr-5 mq480:box-border mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border">
+        <div className="flex-1 overflow-hidden flex flex-col items-start justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 bg-[url('/contactbanner.jpg')] bg-cover bg-no-repeat bg-[top] max-w-full mq480:pl-5 mq480:pr-5 mq480:box-border mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border">
           <div className="self-stretch flex flex-row items-start justify-start py-0 pl-[324px] pr-[323px] mq480:pl-5 mq480:pr-5 mq480:box-border mq1050:pl-[162px] mq1050:pr-[161px] mq1050:box-border">
             <h1 className="m-0 flex-1 relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
               Contact Us

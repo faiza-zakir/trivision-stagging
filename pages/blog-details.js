@@ -9,7 +9,7 @@ import Footer from "../components/footer";
 const BlogDetails = () => {
   return (
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-start justify-start gap-[34px] leading-[normal] tracking-[normal] mq750:gap-[17px]">
-      <header className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full text-center text-xs text-background-color-primary font-h4-32">
+      {/* <header className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full text-center text-xs text-background-color-primary font-h4-32">
         <div className="self-stretch bg-black overflow-hidden flex flex-row items-start justify-between py-[13px] px-10 gap-5">
           <Image
             className="h-6 w-6 relative overflow-hidden shrink-0 object-contain"
@@ -125,7 +125,7 @@ const BlogDetails = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
       <BlogPost />
       <FrameComponent5 />
       <FrameComponent6 />

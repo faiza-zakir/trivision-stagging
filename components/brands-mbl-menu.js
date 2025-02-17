@@ -49,7 +49,7 @@ const BrandsMblMenu = memo(({ className = "", brands }) => {
               width={268}
               height={226}
               alt=""
-              src="/6@2x.png"
+              src="/menu2Img.png"
             />
           </div>
         </div>

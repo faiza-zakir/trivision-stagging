@@ -11,7 +11,7 @@ const Blog = () => {
         search="/search2.svg"
         sVG="/svg2.svg"
       />
-      <section className="self-stretch overflow-hidden flex flex-col items-start justify-end pt-[340px] px-[284px] pb-[60px] gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] text-center text-21xl text-background-color-primary font-h4-32 mq480:pl-5 mq480:pr-5 mq480:box-border mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border">
+      <section className="self-stretch overflow-hidden flex flex-col items-start justify-end pt-[340px] px-[284px] pb-[60px] gap-6 bg-[url('/blogbanner.jpg')] bg-cover bg-no-repeat bg-[top] text-center text-21xl text-background-color-primary font-h4-32 mq480:pl-5 mq480:pr-5 mq480:box-border mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border">
         <div className="self-stretch flex flex-row items-start justify-start py-0 px-[388px] mq480:pl-5 mq480:pr-5 mq480:box-border mq1050:pl-[194px] mq1050:pr-[194px] mq1050:box-border">
           <h1 className="m-0 flex-1 relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
             Blog
