@@ -220,7 +220,7 @@ const Footer = memo(
                     Enter your email
                   </div>
                 </div>
-                <div className="self-stretch bg-background-color-primary flex flex-row items-center justify-center py-3 px-6 text-center text-black">
+                <div className="self-stretch bg-background-color-primary flex flex-row items-center justify-center py-3 px-6 text-center text-black cursor-pointer hover:bg-black hover:text-white hover:border-[1px] hover:border-solid transition-all duration-300">
                   <div className="relative leading-[150%] font-medium">
                     Join
                   </div>

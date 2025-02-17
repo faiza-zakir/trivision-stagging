@@ -33,15 +33,13 @@ const JoinWrapper = memo(
             Join Us @trivision
           </h1>
           <div className="flex flex-col items-start justify-start  pt-1 px-0 pb-0 text-center text-base text-background-color-primary">
-            <div className="self-stretch bg-black overflow-hidden flex flex-row items-start justify-start py-2 pl-6 pr-[23px]">
-              <div
-                className="flex-1 relative leading-[150%] font-medium inline-block min-w-[102px] cursor-pointer"
-                onClick={() =>
-                  handleSocialIcons(
-                    "https://www.instagram.com/trivisionoptical/"
-                  )
-                }
-              >
+            <div
+              className="self-stretch bg-black overflow-hidden flex flex-row items-start justify-start py-2 pl-6 pr-[23px] cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300"
+              onClick={() =>
+                handleSocialIcons("https://www.instagram.com/trivisionoptical/")
+              }
+            >
+              <div className="flex-1 relative leading-[150%] font-medium inline-block min-w-[102px]">
                 FOLLOW US
               </div>
             </div>
