@@ -2,14 +2,20 @@ import { memo } from "react";
 import ContentItems from "./content-items";
 import PropTypes from "prop-types";
 
-const Content = memo(({ className = "" }) => {
+const Content = memo(({ className = "", blogs }) => {
   return (
     <div className="self-stretch flex flex-col items-center justify-start gap-10 mq750:gap-5">
       <div
         className={`self-stretch flex flex-row items-center justify-center flex-wrap content-start gap-x-2 gap-y-6}`}
       >
-        {[1, 2, 3, 4, 5, 6, 7, 8, , 9, 10, 11, 12]?.map((x, i) => (
-          <ContentItems emptyContent="/5-3@2x.png" />
+        {blogs?.map((x, i) => (
+          <ContentItems
+            title={x?.title}
+            description={x?.description?.sections?.[0]?.body}
+            featuredImg={x?.featured_img ? x?.featured_img : "/5-3@2x.png"}
+            slug={x?.slug}
+            key={i}
+          />
         ))}
       </div>
       <div className="bg-black w-[183px] overflow-hidden flex flex-row items-center justify-center py-2 px-[39px] box-border whitespace-nowrap text-center text-base text-background-color-primary cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">

@@ -4,7 +4,35 @@ import JoinWrapper from "../components/join-wrapper";
 import InstaPosts from "../components/insta-posts";
 import Footer from "../components/footer";
 
-const Blog = () => {
+export const getServerSideProps = async ({ params }) => {
+  try {
+    const res = await fetch(
+      `https://apitrivsion.prismcloudhosting.com/api/blog`
+    );
+
+    if (!res.ok) {
+      console.error("Failed to fetch data from the API");
+      return { notFound: true };
+    }
+
+    const data = await res.json();
+
+    if (!data.data || data.data.length === 0) {
+      return { notFound: true };
+    }
+
+    return {
+      props: {
+        blogs: data?.data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data in getServerSideProps:", error);
+    return { notFound: true };
+  }
+};
+
+const Blog = ({ blogs }) => {
   return (
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border leading-[normal] tracking-[normal] mq750:gap-[17px]">
       <FrameComponent1 />
@@ -22,7 +50,7 @@ const Blog = () => {
         </div>
       </section>
       <div className="self-stretch flex flex-row items-start justify-start pt-[60px] px-0 pb-[60px] mq480:pt-[40px] mq480:pb-[40px] box-border max-w-full mq750:pb-5 mq750:box-border mq1050:pb-[25px] mq1050:box-border mq1250:pb-[39px] mq1250:box-border">
-        <Content />
+        <Content blogs={blogs} />
       </div>
       <section className="flex flex-col items-start justify-start pt-0 pb-[60px] mq480:pb-[40px] pl-5 pr-0 box-border gap-[60px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[30px]">
         <JoinWrapper
