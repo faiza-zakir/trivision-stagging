@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
 
 const Home = () => {
   const prevButtonRefCategories = useRef(null);
@@ -50,7 +50,7 @@ const Home = () => {
               ref={prevButtonRefCategories}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaArrowLeft size={20} />
+              <FaAngleLeft size={20} />
             </button>
             <Swiper
               modules={[Navigation]}
@@ -124,7 +124,7 @@ const Home = () => {
               ref={nextButtonRefCategories}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaArrowRight size={20} />
+              <FaAngleRight ize={20} />
             </button>
           </div>
 
@@ -148,7 +148,7 @@ const Home = () => {
               ref={prevButtonRefNewArrivals}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaArrowLeft size={20} />
+              <FaAngleLeft size={20} />
             </button>
             <Swiper
               modules={[Navigation]}
@@ -222,7 +222,7 @@ const Home = () => {
               ref={nextButtonRefNewArrivals}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaArrowRight size={20} />
+              <FaAngleRight size={20} />
             </button>
           </div>
         </div>

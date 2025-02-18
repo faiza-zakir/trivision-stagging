@@ -235,7 +235,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
 import Loader from "../../components/Loader/Loader";
 
 const SunglassesProductDetails = () => {
@@ -316,7 +316,7 @@ const SunglassesProductDetails = () => {
               ref={prevButtonRef}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaArrowLeft size={20} />
+              <FaAngleLeft size={20} />
             </button>
             <Swiper
               modules={[Navigation]}
@@ -362,7 +362,7 @@ const SunglassesProductDetails = () => {
               ref={nextButtonRef}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaArrowRight size={20} />
+              <FaAngleRight size={20} />
             </button>
           </div>
         </div>

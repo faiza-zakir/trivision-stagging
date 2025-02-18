@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import PreviewElements from "./preview-elements";
 import PropTypes from "prop-types";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
 
 const FrameComponent6 = memo(({ className = "" }) => {
   const prevButtonRef = useRef(null);
@@ -26,7 +26,7 @@ const FrameComponent6 = memo(({ className = "" }) => {
             ref={prevButtonRef}
             className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
           >
-            <FaArrowLeft size={20} />
+            <FaAngleLeft size={20} />
           </button>
           <Swiper
             modules={[Navigation]}
@@ -57,7 +57,7 @@ const FrameComponent6 = memo(({ className = "" }) => {
             ref={nextButtonRef}
             className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
           >
-            <FaArrowRight size={20} />
+            <FaAngleRight size={20} />
           </button>
         </div>
         {/* <div className="self-stretch flex flex-row items-center justify-center flex-wrap content-center gap-4 max-w-full text-left text-xl">
