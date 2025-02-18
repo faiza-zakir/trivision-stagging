@@ -6,7 +6,7 @@ const Content = memo(({ className = "", blogs }) => {
   return (
     <div className="self-stretch flex flex-col items-center justify-start gap-10 mq750:gap-5">
       <div
-        className={`self-stretch flex flex-row items-center justify-center flex-wrap content-start gap-x-2 gap-y-6}`}
+        className={`self-stretch flex flex-row items-start justify-start px-20 flex-wrap content-start gap-x-2 gap-y-6}`}
       >
         {blogs?.map((x, i) => (
           <ContentItems

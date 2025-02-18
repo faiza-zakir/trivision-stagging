@@ -26,7 +26,9 @@ const Home = () => {
   useEffect(() => {
     const fetchNewArrivals = async () => {
       try {
-        const response = await axios.get("http://localhost:5055/api/products/products/new-arrivals");
+        const response = await axios.get(
+          "http://localhost:5055/api/products/products/new-arrivals"
+        );
         if (response.data.success) {
           setNewArrivals(response.data.data);
         }
@@ -207,7 +209,9 @@ const Home = () => {
               {newArrivals.map((product) => (
                 <SwiperSlide key={product._id}>
                   <ProductCards
-                    imgBackgroundImage={product.product_images[0] || "default.jpg"}
+                    imgBackgroundImage={
+                      product.product_images[0] || "default.jpg"
+                    }
                     price={product.retail_price}
                     name={product.product_name_short}
                     colorOptionJustifyContent="center"

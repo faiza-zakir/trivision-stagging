@@ -13,7 +13,7 @@ const ContentItems = memo(
 
     return (
       <div
-        className={`w-[314px] h-[456px] flex flex-col items-start justify-start pt-0 px-0 pb-4 box-border gap-4 text-left text-xl text-black font-h4-32 ${className}`}
+        className={`w-[24.5%] h-[456px] flex flex-col items-start justify-start pt-0 px-0 pb-4 box-border gap-4 text-left text-xl text-black font-h4-32 ${className}`}
         key={key}
       >
         <Image
