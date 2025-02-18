@@ -188,7 +188,10 @@ const FrameComponent1 = memo(({ className = "" }) => {
           </div>
           <div className="w-[777px] flex flex-col items-start justify-start pt-[11.5px] px-0 pb-0 box-border max-w-full mq991:w-0 mq991:hidden">
             <nav className="m-0 self-stretch flex flex-row items-start justify-start gap-6 text-center text-sm text-black font-h4-32 mq991:hidden">
-              <div className="relative leading-[150%] uppercase font-medium inline-block min-w-[80px]">
+              <div
+                className="relative leading-[150%] uppercase font-medium inline-block min-w-[80px] cursor-pointer"
+                onClick={() => handleNavigation("/featured")}
+              >
                 FEATURED
               </div>
               <div
@@ -343,7 +346,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
           </button>
           <div
             className="cursor-pointer p-2 mb-2 text-xs uppercase text-black text-start bg-gray-600 font-600 hover:font-bold hover:text-red"
-            onClick={() => handleNavigation("/")}
+            onClick={() => handleNavigation("/featured")}
           >
             Featured
           </div>

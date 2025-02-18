@@ -95,7 +95,8 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
         </div>
         <div className="self-stretch flex flex-row items-center justify-center flex-wrap content-start gap-x-2 gap-y-6">
           {sortedProducts?.slice(0, visibleProducts).map((productItem) => {
-            const firstImageUrl = productItem?.product_images[0] || "";
+            const firstImageUrl =
+              productItem?.product_images[0] || "/bestseller1.jpg";
             return (
               <div
                 key={productItem._id}
