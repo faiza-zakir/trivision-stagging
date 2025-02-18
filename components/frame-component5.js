@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const FrameComponent5 = memo(({ className = "" }) => {
   return (
     <section
-      className={`self-stretch flex flex-row items-start justify-start pt-0 px-20 pb-[86px] box-border max-w-full text-left text-21xl text-black font-h4-32 mq750:pl-10 mq750:pr-10 mq750:box-border ${className}`}
+      className={`self-stretch flex flex-row items-start justify-start pt-0 px-10 pb-[60px] mq480:pb-[40px] box-border max-w-full text-left text-21xl text-black font-h4-32 mq750:pl-10 mq750:pr-10 mq750:box-border ${className}`}
     >
       <div className="flex-1 flex flex-row items-start justify-center flex-wrap content-start gap-[60px] max-w-full mq750:gap-[30px]">
         <h1 className="m-0 w-[496px] relative text-inherit leading-[120%] font-medium font-[inherit] inline-block shrink-0 max-w-full mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">

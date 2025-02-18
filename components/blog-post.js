@@ -6,9 +6,9 @@ import PropTypes from "prop-types";
 const BlogPost = memo(({ className = "" }) => {
   return (
     <div
-      className={`self-stretch flex flex-row items-start justify-start pt-0 px-20 pb-[77px] box-border max-w-full text-center text-base text-black font-h4-32 mq480:pb-[21px] mq480:box-border mq750:pl-10 mq750:pr-10 mq750:box-border mq1050:pb-8 mq1050:box-border mq1250:pb-[50px] mq1250:box-border ${className}`}
+      className={`self-stretch flex flex-row items-start justify-start pt-[60px] px-10 pb-[60px] mq480:pt-[40px] mq480:pb-[40px] box-border max-w-full text-center text-base text-black font-h4-32 mq480:box-border mq750:pl-10 mq750:pr-10 mq750:box-border mq1050:pb-8 mq1050:box-border mq1250:pb-[50px] mq1250:box-border ${className}`}
     >
-      <div className="flex-1 flex flex-col items-start justify-start gap-10 max-w-full mq750:gap-5">
+      <div className="flex-1 flex flex-col items-center justify-start gap-10 max-w-full mq750:gap-5">
         <div className="self-stretch flex flex-col items-start justify-start gap-4 text-21xl">
           <h1 className="m-0 self-stretch relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
             How To Clean Your Sunglasses
@@ -17,14 +17,16 @@ const BlogPost = memo(({ className = "" }) => {
             November 08, 2024 - By Mary Herald
           </div>
         </div>
-        <Image
-          className="self-stretch relative max-w-full overflow-hidden max-h-full object-cover"
-          loading="lazy"
-          width={1280}
-          height={400}
-          alt=""
-          src="/image@2x.png"
-        />
+        <div className="self-stretch flex items-center justify-center">
+          <Image
+            className="self-stretch relative max-w-full overflow-hidden max-h-full object-cover"
+            loading="lazy"
+            width={1280}
+            height={400}
+            alt=""
+            src="/blogdetail.png"
+          />
+        </div>
         <div className="self-stretch flex flex-col items-start justify-start gap-4 text-left">
           <div className="relative leading-[150%] font-medium">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
