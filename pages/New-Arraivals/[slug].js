@@ -16,7 +16,6 @@ const ProductListing = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Ensure slug is available before making the API call
     if (!slug) return;
 
     const fetchData = async () => {
@@ -33,7 +32,7 @@ const ProductListing = () => {
         }
 
         const data = await res.json();
-        // console.log(data.data, "hi");
+
         if (!data.newArrivals || data.newArrivals.length === 0) {
           throw new Error(`No products found for ${slug}`);
         }
@@ -54,19 +53,26 @@ const ProductListing = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="text-red-500">Error: {error}</div>;
   }
 
-  console.log(products, "hi too ")
   return (
     <>
       <FrameComponent1 />
       <div className="w-full bg-gray-100 flex flex-col items-center">
         <section className="w-full max-w-7xl px-5 pb-[60px] pt-[60px]">
-          <FiltersAndProducts products={products} />
+          {products.length > 0 ? (
+            <FiltersAndProducts product={products} />
+          ) : (
+            <p className="text-center text-gray-600">No products available</p>
+          )}
         </section>
         <section className="pb-[60px]">
-          <FrameComponent4 products={products} />
+          {products.length > 0 ? (
+            <FrameComponent4 product={products} />
+          ) : (
+            <p className="text-center text-gray-600">No products found</p>
+          )}
         </section>
         <Footer maskGroup="/mask-group@2x.png" />
       </div>

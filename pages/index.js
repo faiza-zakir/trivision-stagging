@@ -29,7 +29,7 @@ const Home = () => {
       try {
         const response = await axios.get("http://localhost:5055/api/products/products/new-arrivals");
         if (response.data.success) {
-          setNewArrivals(response.data.data);
+          setNewArrivals(response.data.newArrivals);
         }
       } catch (error) {
         console.error("Error fetching new arrivals:", error);

@@ -18,7 +18,7 @@ const Bestseller = memo(({ className = "" }) => {
       try {
         const response = await axios.get("http://localhost:5055/api/products/products/best-sellers");
         if (response.data.success) {
-          setBestSellers(response.data.data);
+          setBestSellers(response.data.bestSellers);
         }
       } catch (error) {
         console.error("Error fetching best sellers:", error);
