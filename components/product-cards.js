@@ -152,7 +152,6 @@ const ProductCards = memo(
               {name}
             </div>
           </div>
-          {/* <div className="self-stretch flex flex-row items-center justify-start gap-3"> */}
           <div className="flex gap-5 items-center w-full">
             <div className="flex-1 flex flex-row items-start justify-between">
               <div className="relative leading-[150%] font-medium">

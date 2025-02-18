@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
-import Main1 from "../../components/main1";
+import Main1 from "../../components/Accessories/main1";
 import IdeologyBullets from "../../components/ideology-bullets";
 import ProductCards from "../../components/product-cards";
 import Insta from "../../components/insta";
@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Loader from "../../components/Loader/Loader";
 
 const SunglassesProductDetails = () => {
@@ -22,7 +22,6 @@ const SunglassesProductDetails = () => {
   const { slug } = router.query;
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
-  console.log(slug, "slug")
 
   useEffect(() => {
     if (!slug) return;
@@ -30,10 +29,11 @@ const SunglassesProductDetails = () => {
     const fetchProduct = async () => {
       try {
         const res = await fetch(
-          `https://apitrivsion.prismcloudhosting.com/api/products/${slug}`
+          `http://localhost:5055/api/accesories/slug/${slug}`
         );
         const data = await res.json();
-        if (!data.product) {
+        // console.log(data.data.product_name_long, "hi")
+        if (!data.data) {
           setError("Product not found");
         } else {
           setProduct(data);
@@ -48,13 +48,11 @@ const SunglassesProductDetails = () => {
     fetchProduct();
   }, [slug]);
 
-  const addCart = () => {
-    alert("Product added to cart!");
-  };
-
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (!product) return null;
+
+//   console.log(product.data.category.name, "for")
 
   return (
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center">
@@ -93,7 +91,7 @@ const SunglassesProductDetails = () => {
               ref={prevButtonRef}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaAngleLeft size={20} />
+              <FaArrowLeft size={20} />
             </button>
             <Swiper
               modules={[Navigation]}
@@ -139,7 +137,7 @@ const SunglassesProductDetails = () => {
               ref={nextButtonRef}
               className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
             >
-              <FaAngleRight size={20} />
+              <FaArrowRight size={20} />
             </button>
           </div>
         </div>

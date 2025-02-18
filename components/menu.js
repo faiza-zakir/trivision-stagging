@@ -10,6 +10,10 @@ const Menu = memo(({ className = "", category }) => {
     router.push(`/Sunglasses/${slug}`);
   };
 
+  const handleNavigationNewArrivals = (slug) => {
+    router.push(`/New-Arraivals/${slug}`)
+  }
+
   const handleNavigationGender = (gender, slug) => {
     router.push(`/${gender}/${slug}`);
   };
@@ -39,7 +43,9 @@ const Menu = memo(({ className = "", category }) => {
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
-            <div className="relative leading-[150%] uppercase font-medium cursor-pointer">
+            <div className="relative leading-[150%] uppercase font-medium cursor-pointer"
+            onClick={() => handleNavigationNewArrivals(category[5].slug)}
+            >
               NEW ARRIVALS
             </div>
           </div>

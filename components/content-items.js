@@ -25,7 +25,7 @@ const ContentItems = memo(
           src={featuredImg}
           onClick={() => handleNavigation(`/blog/${slug}`)}
         />
-        <div className="self-stretch flex flex-col items-start justify-start gap-2">
+        <div className="self-stretch flex flex-col items-center justify-center gap-2">
           <h3 className="m-0 relative text-inherit leading-[150%] font-medium font-[inherit] mq480:text-base mq480:leading-[24px]">
             {title}
           </h3>

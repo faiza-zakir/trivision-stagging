@@ -7,7 +7,7 @@ const ProductPreviews = ({ product }) => {
 
   const styles = {
     card: {
-      backgroundColor: '#f8f8f8',
+      backgroundColor: '#fff',
       borderRadius: '15px',
       padding: '1rem 1.5rem',
     },
@@ -49,22 +49,28 @@ const ProductPreviews = ({ product }) => {
 
   return (
     <div style={styles.card}>
-      <div className="text-center mb-3 p-md-4">
-        <img
-          src={product[index]}
-          alt=""
-          style={styles.mainImage}
-          className="img-fluid"
-        />
-      </div>
+      {product && product.length > 0 ? (
+        <>
+          <div className="text-center mb-3 p-md-4">
+            <img
+              src={product[index]}
+              alt=""
+              style={styles.mainImage}
+              className="img-fluid"
+            />
+          </div>
 
-      <Nav style={styles.gallery}>
-        {product && product.map((preview, i) => (
-          <li key={i} onClick={() => setIndex(i)} style={styles.galleryItem}>
-            <img src={preview} alt="" style={styles.galleryImage} className="img-fluid" />
-          </li>
-        ))}
-      </Nav>
+          <Nav style={styles.gallery}>
+            {product.map((preview, i) => (
+              <li key={i} onClick={() => setIndex(i)} style={styles.galleryItem}>
+                <img src={preview} alt="" style={styles.galleryImage} className="img-fluid" />
+              </li>
+            ))}
+          </Nav>
+        </>
+      ) : (
+        <p>No images available</p>
+      )}
     </div>
   );
 };

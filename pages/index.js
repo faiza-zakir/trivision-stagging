@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import axios from "axios";
 import Image from "next/image";
 import FrameComponent1 from "../components/frame-component1";
 import Banner from "../components/banner";
@@ -16,12 +17,31 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
 import InstaPosts from "../components/insta-posts";
 
 const Home = () => {
+  const [newArrivals, setNewArrivals] = useState([]);
   const prevButtonRefCategories = useRef(null);
   const nextButtonRefCategories = useRef(null);
   const prevButtonRefNewArrivals = useRef(null);
   const nextButtonRefNewArrivals = useRef(null);
 
+  useEffect(() => {
+    const fetchNewArrivals = async () => {
+      try {
+        const response = await axios.get("http://localhost:5055/api/products/products/new-arrivals");
+        if (response.data.success) {
+          setNewArrivals(response.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching new arrivals:", error);
+      }
+    };
+
+    fetchNewArrivals();
+  }, []);
+
   return (
+    // <>
+    //   <First />
+    // </>
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-end justify-start leading-[normal] tracking-[normal]">
       <FrameComponent1 />
       <Banner />
@@ -184,39 +204,19 @@ const Home = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <ProductCards
-                  imgBackgroundImage="/newarriv1.jpg"
-                  title="NEW ARRIVALS"
-                  price="10"
-                  colorOptionJustifyContent="center"
-                  priceContainerJustifyContent="center"
-                  iconamoonheartLight="/iconamoonheartlight.svg"
-                  sVG="/svg-1.svg"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCards
-                  imgBackgroundImage="/newarriv2.jpg"
-                  title="NEW ARRIVALS"
-                  price="20"
-                  colorOptionJustifyContent="center"
-                  priceContainerJustifyContent="center"
-                  iconamoonheartLight="/iconamoonheartlight-1.svg"
-                  sVG="/svg-2.svg"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <ProductCards
-                  imgBackgroundImage="/newarriv3.jpg"
-                  title="NEW ARRIVALS"
-                  price="30"
-                  colorOptionJustifyContent="center"
-                  priceContainerJustifyContent="center"
-                  iconamoonheartLight="/iconamoonheartlight-2.svg"
-                  sVG="/svg-3.svg"
-                />
-              </SwiperSlide>
+              {newArrivals.map((product) => (
+                <SwiperSlide key={product._id}>
+                  <ProductCards
+                    imgBackgroundImage={product.product_images[0] || "default.jpg"}
+                    price={product.retail_price}
+                    name={product.product_name_short}
+                    colorOptionJustifyContent="center"
+                    priceContainerJustifyContent="center"
+                    iconamoonheartLight={`/iconamoonheartlight.svg`}
+                    sVG={`/svg-1.svg`}
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
             <button
               ref={nextButtonRefNewArrivals}

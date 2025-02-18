@@ -218,7 +218,9 @@ const FrameComponent1 = memo(({ className = "" }) => {
               >
                 Contact Lens
               </div>
-              <div className="flex-1 relative leading-[150%] uppercase font-medium inline-block min-w-[103px]">
+              <div className="flex-1 relative leading-[150%] uppercase font-medium inline-block min-w-[103px] cursor-pointer"
+                onClick={() => handleNavigation("/Accessories")}
+              >
                 ACCESSORIES
               </div>
               <div
@@ -336,9 +338,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
       )}
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-30 transform ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-30 transform ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -377,7 +378,9 @@ const FrameComponent1 = memo(({ className = "" }) => {
           >
             Contact Lens
           </div>
-          <div className="cursor-pointer p-2 mb-2 text-xs uppercase text-black text-start bg-gray-600 font-600 hover:font-bold hover:text-red">
+          <div className="cursor-pointer p-2 mb-2 text-xs uppercase text-black text-start bg-gray-600 font-600 hover:font-bold hover:text-red"
+          onClick={() => handleNavigation("/Accessories")}
+          >
             Accessories
           </div>
           <div
@@ -390,9 +393,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
       </div>
       {/* mobile submenu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${
-          isMblBrandSubMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${isMblBrandSubMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -405,9 +407,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${
-          isMblSubMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${isMblSubMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -420,9 +421,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${
-          isMblEyeGlassesSubMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${isMblEyeGlassesSubMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -435,9 +435,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${
-          isMblContactLensSubMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-[30] transform ${isMblContactLensSubMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -451,9 +450,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
       </div>
       {/* Desktop Menus */}
       <div
-        className={`fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg z-[30] transform ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg z-[30] transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -466,9 +464,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg z-[30] transform ${
-          isEyeglassesMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
+        className={`fixed top-0 left-0 h-full w-[40%] bg-white shadow-lg z-[30] transform ${isEyeglassesMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -481,9 +478,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 w-full bg-white shadow-lg z-10 transform ${
-          isBrandMenuOpen ? "translate-y-20" : "-translate-y-full"
-        } transition-transform duration-300 brand-menu`}
+        className={`fixed top-0 left-0 w-full bg-white shadow-lg z-10 transform ${isBrandMenuOpen ? "translate-y-20" : "-translate-y-full"
+          } transition-transform duration-300 brand-menu`}
       >
         <div className="flex flex-col p-4">
           <button
@@ -496,9 +492,8 @@ const FrameComponent1 = memo(({ className = "" }) => {
         </div>
       </div>
       <div
-        className={`fixed top-0 left-0 w-full bg-white shadow-lg z-10 transform ${
-          isContactLensMenuOpen ? "translate-y-20" : "-translate-y-full"
-        } transition-transform duration-300 overflow-auto contact-lens-menu`}
+        className={`fixed top-0 left-0 w-full bg-white shadow-lg z-10 transform ${isContactLensMenuOpen ? "translate-y-20" : "-translate-y-full"
+          } transition-transform duration-300 overflow-auto contact-lens-menu`}
       >
         <div className="flex flex-col p-4 h-full">
           <button
