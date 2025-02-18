@@ -5,6 +5,7 @@ import FrameComponent8 from "../components/frame-component8";
 import JoinWrapper from "../components/join-wrapper";
 import Footer from "../components/footer";
 import InstaPosts from "../components/insta-posts";
+import FaqComponentHome from "../components/faq-component-home";
 
 const Contact = () => {
   return (
@@ -41,7 +42,7 @@ const Contact = () => {
         </div>
       </section>
       <FrameComponent8 />
-      <section className="flex flex-col items-start justify-start pt-0 pb-[60px] mq480:pb-[40px] pl-5 pr-0 box-border gap-[60px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[30px]">
+      <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 pb-[60px] gap-[60px] mq480:pb-[40px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
         <JoinWrapper
           joinWrapperPadding="0px 20px 0px 0px"
           joinWrapperFlex="unset"
@@ -51,6 +52,7 @@ const Contact = () => {
           emptyPlaceholders2="/6@2x.png"
           emptyPlaceholders3="/5@2x.png"
         />
+        <FaqComponentHome />
         <InstaPosts />
       </section>
       <Footer

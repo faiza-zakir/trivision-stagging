@@ -6,7 +6,6 @@ import Bestseller from "../components/bestseller";
 import ProductCards from "../components/product-cards";
 import FrameComponent2 from "../components/frame-component2";
 import JoinWrapper from "../components/join-wrapper";
-import ImagePlaceholders from "../components/image-placeholders";
 import FaqComponentHome from "../components/faq-component-home";
 import Footer from "../components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -229,8 +228,11 @@ const Home = () => {
         </div>
       </section>
       <FrameComponent2 />
-      <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 pb-[60px] mq480:pb-[40px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
+      <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 pb-[60px] gap-[60px] mq480:pb-[40px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
         <JoinWrapper
+          joinWrapperPadding="0px 20px 0px 0px"
+          joinWrapperFlex="unset"
+          joinWrapperAlignSelf="unset"
           emptyPlaceholders="/8@2x.png"
           emptyPlaceholders1="/7@2x.png"
           emptyPlaceholders2="/6@2x.png"

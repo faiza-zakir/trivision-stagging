@@ -13,7 +13,7 @@ const FaqComponentHome = memo(({ className = "" }) => {
   return (
     <>
       <section
-        className={`flex flex-row items-center pt-[60px] pb-[60px] mq480:pt-[40px] mq480:pb-[40px] justify-center box-border gap-[74px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[37px] mq480:gap-[18px] ${className}`}
+        className={`flex flex-row items-center justify-center box-border gap-[74px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[37px] mq480:gap-[18px] ${className}`}
       >
         <div className="self-stretch flex flex-row mq480:flex-col items-center justify-center gap-[60px] max-w-full mq750:gap-[30px]">
           <div className="flex flex-row items-center justify-center pt-11 px-0 pb-0 box-border max-w-full mq750:pt-[29px] mq750:box-border mq750:min-w-full">
