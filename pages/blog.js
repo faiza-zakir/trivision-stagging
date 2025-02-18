@@ -2,6 +2,7 @@ import FrameComponent1 from "../components/frame-component1";
 import Content from "../components/content";
 import JoinWrapper from "../components/join-wrapper";
 import Footer from "../components/footer";
+import InstaPosts from "../components/insta-posts";
 
 const Blog = () => {
   return (
@@ -33,6 +34,7 @@ const Blog = () => {
           emptyPlaceholders2="/6@2x.png"
           emptyPlaceholders3="/5@2x.png"
         />
+        <InstaPosts />
       </section>
       <Footer
         maskGroup="/mask-group@2x.png"

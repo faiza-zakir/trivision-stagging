@@ -2,7 +2,7 @@ import FrameComponent1 from "../components/frame-component1";
 import BlogPost from "../components/blog-post";
 import FrameComponent5 from "../components/frame-component5";
 import FrameComponent6 from "../components/frame-component6";
-import FrameComponent7 from "../components/frame-component7";
+import InstaPosts from "../components/insta-posts";
 import JoinWrapper from "../components/join-wrapper";
 import Footer from "../components/footer";
 
@@ -23,6 +23,7 @@ const BlogDetails = () => {
           emptyPlaceholders2="/6@2x.png"
           emptyPlaceholders3="/5@2x.png"
         />
+        <InstaPosts />
       </section>
       <Footer
         maskGroup="/mask-group@2x.png"

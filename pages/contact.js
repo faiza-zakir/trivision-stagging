@@ -4,6 +4,7 @@ import Content1 from "../components/content1";
 import FrameComponent8 from "../components/frame-component8";
 import JoinWrapper from "../components/join-wrapper";
 import Footer from "../components/footer";
+import InstaPosts from "../components/insta-posts";
 
 const Contact = () => {
   return (
@@ -50,6 +51,7 @@ const Contact = () => {
           emptyPlaceholders2="/6@2x.png"
           emptyPlaceholders3="/5@2x.png"
         />
+        <InstaPosts />
       </section>
       <Footer
         maskGroup="/mask-group@2x.png"
