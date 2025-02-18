@@ -73,14 +73,14 @@ const Content1 = memo(({ className = "" }) => {
               <input
                 type="text"
                 placeholder="Name"
-                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full"
+                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full bg-transparent pb-2"
               />
             </div>
             <div className="flex-1 border-gray-300 border-b-[1px] border-solid box-border flex flex-row items-center justify-start pt-5 px-0 pb-[5px] min-w-[411px] max-w-full mq750:min-w-full">
               <input
                 type="text"
                 placeholder="Company"
-                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full"
+                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full bg-transparent pb-2"
               />
             </div>
           </div>
@@ -89,14 +89,14 @@ const Content1 = memo(({ className = "" }) => {
               <input
                 type="text"
                 placeholder="Phone"
-                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full"
+                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full bg-transparent pb-2"
               />
             </div>
             <div className="flex-1 border-gray-300 border-b-[1px] border-solid box-border flex flex-row items-center justify-start pt-3 px-0 pb-[5px] min-w-[411px] max-w-full mq750:min-w-full">
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full"
+                className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full bg-transparent pb-2"
               />
             </div>
           </div>
@@ -104,13 +104,13 @@ const Content1 = memo(({ className = "" }) => {
             <input
               type="text"
               placeholder="Subject"
-              className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full"
+              className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full bg-transparent pb-2"
             />
           </div>
           <div className="self-stretch border-gray-300 border-b-[1px] border-solid box-border flex flex-row items-start justify-start pt-3 px-0 pb-[5px] max-w-full">
             <textarea
               placeholder="Message"
-              className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full h-full resize-none"
+              className="flex-1 border-none outline-none leading-[150%] font-medium max-w-full h-full resize-none bg-transparent"
             />
           </div>
         </div>

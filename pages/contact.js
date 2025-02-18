@@ -1,13 +1,8 @@
-import { useCallback } from "react";
-import Image from "next/image";
 import FrameComponent1 from "../components/frame-component1";
 import GetInTouchContainer from "../components/get-in-touch-container";
 import Content1 from "../components/content1";
 import FrameComponent8 from "../components/frame-component8";
 import JoinWrapper from "../components/join-wrapper";
-import AccordionItem from "../components/accordion-item";
-import AccordionItem1 from "../components/accordion-item1";
-import ImagePlaceholders from "../components/image-placeholders";
 import Footer from "../components/footer";
 
 const Contact = () => {
@@ -27,12 +22,12 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col items-start justify-start pt-0 pb-[26px] pl-5 pr-0 box-border gap-[60px] max-w-full mq750:gap-[30px]">
+      <section className="flex flex-col items-start justify-start pt-[60px] px-5 pb-[60px] mq480:pt-[40px] mq480:pb-[40px] box-border gap-[60px] mq480:gap-[40px] max-w-full mq750:gap-[30px]">
         <GetInTouchContainer />
         <Content1 />
       </section>
       <section className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-1.5 box-border max-w-full">
-        <div className="flex justify-center items-center w-full px-4 py-6">
+        <div className="flex justify-center items-center w-full">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.1271655317496!2d55.17148827592758!3d25.097556335728335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bac767bf47d%3A0xf30549b870e11ae9!2sTrivision%20Opticals%20-%20Head%20Office!5e0!3m2!1sen!2sin!4v1738838821919!5m2!1sen!2sin"
             width="100%"
@@ -45,7 +40,7 @@ const Contact = () => {
         </div>
       </section>
       <FrameComponent8 />
-      <section className="flex flex-col items-start justify-start pt-0 pb-10 pl-5 pr-0 box-border gap-[60px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[30px]">
+      <section className="flex flex-col items-start justify-start pt-0 pb-[60px] mq480:pb-[40px] pl-5 pr-0 box-border gap-[60px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[30px]">
         <JoinWrapper
           joinWrapperPadding="0px 20px 0px 0px"
           joinWrapperFlex="unset"

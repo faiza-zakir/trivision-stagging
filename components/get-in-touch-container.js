@@ -7,7 +7,7 @@ const GetInTouchContainer = memo(({ className = "" }) => {
     <div
       className={`self-stretch flex flex-row items-start justify-start gap-[60px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[30px] mq1250:flex-wrap ${className}`}
     >
-      <div className="w-[612px] flex flex-col items-start justify-start pt-[138px] px-0 pb-0 box-border max-w-full mq750:pt-[90px] mq750:box-border mq750:min-w-full mq1250:flex-1">
+      <div className="w-[612px] flex flex-col items-start justify-start pt-[138px] mq480:pt-0 px-0 pb-0 box-border max-w-full mq750:pt-[90px] mq750:box-border mq750:min-w-full mq1250:flex-1">
         <div className="self-stretch flex flex-col items-start justify-start gap-6 max-w-full">
           <div className="self-stretch flex flex-row items-center justify-start py-0 pl-0 pr-[354px] gap-5 mq480:gap-[219px] mq480:pr-5 mq480:box-border mq750:gap-[437px] mq750:pr-[177px] mq750:box-border">
             <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
