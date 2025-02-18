@@ -1,5 +1,6 @@
-import { memo, useRef } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
 import ProductCards from "./product-cards";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,8 +9,24 @@ import { Navigation } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
 
 const Bestseller = memo(({ className = "" }) => {
+  const [bestSellers, setBestSellers] = useState([]);
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
+
+  useEffect(() => {
+    const fetchBestSellers = async () => {
+      try {
+        const response = await axios.get("http://localhost:5055/api/products/products/best-sellers");
+        if (response.data.success) {
+          setBestSellers(response.data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching best sellers:", error);
+      }
+    };
+
+    fetchBestSellers();
+  }, []);
 
   return (
     <div
@@ -59,39 +76,19 @@ const Bestseller = memo(({ className = "" }) => {
               </div>
             </div>
           </SwiperSlide>
-
-          {/* {[1, 2, 3].map((item, index) => ( */}
-          <SwiperSlide>
-            <ProductCards
-              imgBackgroundImage="bestseller1.jpg"
-              price="15"
-              colorOptionJustifyContent="center"
-              priceContainerJustifyContent="center"
-              iconamoonheartLight={`/iconamoonheartlight.svg`}
-              sVG={`/svg-1.svg`}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCards
-              imgBackgroundImage="bestseller2.jpg"
-              price="10"
-              colorOptionJustifyContent="center"
-              priceContainerJustifyContent="center"
-              iconamoonheartLight={`/iconamoonheartlight.svg`}
-              sVG={`/svg-1.svg`}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCards
-              imgBackgroundImage="bestseller3.jpg"
-              price="25"
-              colorOptionJustifyContent="center"
-              priceContainerJustifyContent="center"
-              iconamoonheartLight={`/iconamoonheartlight.svg`}
-              sVG={`/svg-1.svg`}
-            />
-          </SwiperSlide>
-          {/* ))} */}
+          {bestSellers.map((product) => (
+            <SwiperSlide key={product._id}>
+              <ProductCards
+                imgBackgroundImage={product.product_images[0] || "default.jpg"}
+                price={product.retail_price}
+                name={product.product_name_short}
+                colorOptionJustifyContent="center"
+                priceContainerJustifyContent="center"
+                iconamoonheartLight={`/iconamoonheartlight.svg`}
+                sVG={`/svg-1.svg`}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         <button
