@@ -1,8 +1,8 @@
 import FrameComponent1 from "../components/frame-component1";
 import Content from "../components/content";
 import JoinWrapper from "../components/join-wrapper";
-import Footer from "../components/footer";
 import InstaPosts from "../components/insta-posts";
+import Footer from "../components/footer";
 
 const Blog = () => {
   return (

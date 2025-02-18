@@ -2,7 +2,9 @@ import FrameComponent1 from "../components/frame-component1";
 import FrameComponent11 from "../components/frame-component11";
 import FrameComponent10 from "../components/frame-component10";
 import Ideology from "../components/ideology";
-import FrameComponent12 from "../components/frame-component12";
+import JoinWrapper from "../components/join-wrapper";
+import FaqComponentHome from "../components/faq-component-home";
+import InstaPosts from "../components/insta-posts";
 import Footer from "../components/footer";
 
 const About = () => {
@@ -63,8 +65,18 @@ const About = () => {
         <FrameComponent10 />
         <Ideology />
       </section>
-      <section className="self-stretch flex flex-col items-center justify-center pt-0 px-0 pb-[26px] box-border max-w-full">
-        <FrameComponent12 />
+      <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 pb-[60px] gap-[60px] mq480:pb-[40px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
+        <JoinWrapper
+          joinWrapperPadding="0px 20px 0px 0px"
+          joinWrapperFlex="unset"
+          joinWrapperAlignSelf="unset"
+          emptyPlaceholders="/8@2x.png"
+          emptyPlaceholders1="/7@2x.png"
+          emptyPlaceholders2="/6@2x.png"
+          emptyPlaceholders3="/5@2x.png"
+        />
+        <FaqComponentHome />
+        <InstaPosts />
       </section>
       <Footer
         maskGroup="/mask-group@2x.png"
