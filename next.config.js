@@ -14,11 +14,16 @@ const nextConfig = {
         protocol: "https",
         hostname: "example.com",
       },
+      {
+        protocol: "https",
+        hostname: "dummyimage.com",
+      },
     ],
     domains: [
       "apitrivsion.prismcloudhosting.com",
       "trivision-images.s3.amazonaws.com",
       "example.com",
+      "dummyimage.com",
     ],
   },
 };
