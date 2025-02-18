@@ -22,7 +22,7 @@ export const getServerSideProps = async ({ params }) => {
 
     return {
       props: {
-        products: data?.products?.filter((x) => x?.is_featured == "true"),
+        products: data?.products?.filter((x) => x?.is_bestvalue == "true"),
       },
     };
   } catch (error) {
@@ -31,7 +31,8 @@ export const getServerSideProps = async ({ params }) => {
   }
 };
 
-const FeaturedListing = ({ products }) => {
+const BestValueListing = ({ products }) => {
+  console.log("products", products);
   return (
     <>
       <FrameComponent1 />
@@ -60,4 +61,4 @@ const FeaturedListing = ({ products }) => {
   );
 };
 
-export default FeaturedListing;
+export default BestValueListing;

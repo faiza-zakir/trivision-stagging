@@ -221,7 +221,10 @@ const FrameComponent1 = memo(({ className = "" }) => {
               <div className="flex-1 relative leading-[150%] uppercase font-medium inline-block min-w-[103px]">
                 ACCESSORIES
               </div>
-              <div className="relative leading-[150%] uppercase font-medium text-red inline-block min-w-[90px]">
+              <div
+                className="relative leading-[150%] uppercase font-medium text-red inline-block min-w-[90px] cursor-pointer"
+                onClick={() => handleNavigation("/best-value")}
+              >
                 BEST VALUE
               </div>
             </nav>
@@ -377,7 +380,10 @@ const FrameComponent1 = memo(({ className = "" }) => {
           <div className="cursor-pointer p-2 mb-2 text-xs uppercase text-black text-start bg-gray-600 font-600 hover:font-bold hover:text-red">
             Accessories
           </div>
-          <div className="cursor-pointer p-2  text-xs uppercase text-black text-start bg-gray-600 font-600 hover:font-bold hover:text-red">
+          <div
+            className="cursor-pointer p-2  text-xs uppercase text-black text-start bg-gray-600 font-600 hover:font-bold hover:text-red"
+            onClick={() => handleNavigation("/best-value")}
+          >
             Best Value
           </div>
         </div>
