@@ -15,8 +15,6 @@ const FrameComponent13 = memo(({ className = "", products }) => {
     setSelectedPack(event.target.value);
   };
 
-  // console.log(product.product.category, "framecomponent13")
-
   return (
     <section
       className={`self-stretch overflow-hidden flex flex-col items-center justify-start py-[60px] px-20 box-border gap-6 max-w-full text-left text-xs text-gray-400 font-h4-32 mq480:pt-5 mq480:pb-5 mq480:box-border mq825:py-[25px] mq825:px-10 mq825:box-border mq1410:pt-[39px] mq1410:pb-[39px] mq1410:box-border ${className}`}

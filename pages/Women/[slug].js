@@ -16,8 +16,6 @@ const ProductListing = () => {
   const pathname = usePathname();
   const gender = pathname?.split("/")?.[1];
 
-  console.log(slug, gender);
-
   useEffect(() => {
     // Ensure slug and gender are available before making the API call
     if (!slug || !gender) return;

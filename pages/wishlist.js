@@ -27,16 +27,11 @@ const Wishlist = () => {
             },
           }
         );
-        // console.log(response, "response");
 
-        // Filter orders to only include those with 'wishlist' in shipping_info
-        // Corrected filter logic
         // let data
         const wishlistOrders = response.data.orders.filter(
           (order) => order.shipping_info === "whishlist"
         );
-
-        console.log(wishlistOrders, "wishlistOrders");
 
         setOrders(wishlistOrders);
       } catch (error) {
@@ -49,7 +44,6 @@ const Wishlist = () => {
     fetchOrders();
   }, []);
 
-  // console.log(orders, "orders");
   const handleAddToBag = async (orderId) => {
     try {
       const token = localStorage.getItem("token");

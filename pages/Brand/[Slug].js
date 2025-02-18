@@ -34,10 +34,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   try {
-    console.log(params.Slug, "params");
-    // const brandSlug = params.slug; // Ensure it's lowercase if your file is [slug].js
-    //
-
     // Corrected API request with dynamic slug
     const res = await fetch(
       `https://apitrivsion.prismcloudhosting.com/api/products/brand/${params.Slug}`
@@ -63,7 +59,6 @@ export const getStaticProps = async ({ params }) => {
 
 // Main component to render the product listing
 const ProductListing = ({ products }) => {
-  // console.log(products.products, "--product");
   return (
     <>
       <FrameComponent1 />

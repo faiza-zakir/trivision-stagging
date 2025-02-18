@@ -32,7 +32,6 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 const BestValueListing = ({ products }) => {
-  console.log("products", products);
   return (
     <>
       <FrameComponent1 />

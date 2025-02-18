@@ -34,9 +34,6 @@ const CustomerAccount = () => {
       return;
     }
 
-    // Debug: Log the form data to check for unexpected keys
-    console.log("Form Data:", formData);
-
     setIsLoading(true);
     try {
       const response = await axios.post(
