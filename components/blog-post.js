@@ -1,9 +1,9 @@
 import { memo } from "react";
 import Image from "next/image";
-import ContentParagraphs from "./content-paragraphs";
+// import ContentParagraphs from "./content-paragraphs";
 import PropTypes from "prop-types";
 
-const BlogPost = memo(({ className = "" }) => {
+const BlogPost = memo(({ className = "", blog }) => {
   return (
     <div
       className={`self-stretch flex flex-row items-start justify-start pt-[60px] px-10 pb-[60px] mq480:pt-[40px] mq480:pb-[40px] box-border max-w-full text-center text-base text-black font-h4-32 mq480:box-border mq750:pl-10 mq750:pr-10 mq750:box-border mq1050:pb-8 mq1050:box-border mq1250:pb-[50px] mq1250:box-border ${className}`}
@@ -11,10 +11,15 @@ const BlogPost = memo(({ className = "" }) => {
       <div className="flex-1 flex flex-col items-center justify-start gap-10 max-w-full mq750:gap-5">
         <div className="self-stretch flex flex-col items-start justify-start gap-4 text-21xl">
           <h1 className="m-0 self-stretch relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
-            How To Clean Your Sunglasses
+            {blog?.title}
           </h1>
           <div className="self-stretch relative text-base leading-[150%] font-medium">
-            November 08, 2024 - By Mary Herald
+            {new Date(blog?.createdAt)?.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}{" "}
+            - Admin
           </div>
         </div>
         <div className="self-stretch flex items-center justify-center">
@@ -24,66 +29,30 @@ const BlogPost = memo(({ className = "" }) => {
             width={1280}
             height={400}
             alt=""
-            src="/blogdetail.png"
+            src={blog?.main_img}
           />
         </div>
         <div className="self-stretch flex flex-col items-start justify-start gap-4 text-left">
-          <div className="relative leading-[150%] font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-            elementum tellus.
-          </div>
-          <div className="relative leading-[150%] font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-            elementum tellus.
-          </div>
+          {blog?.description?.sections?.map((sec, i) => (
+            <div className="relative leading-[150%] font-medium" key={i}>
+              <h3>{sec?.title}</h3>
+              <p>{sec?.body}</p>
+              <ol>
+                {sec?.subsections?.map((subsec, ind) => (
+                  <li key={ind}>
+                    <h4>{subsec?.["sub-title"]}</h4>
+                    <p>{subsec?.["sub-body"]}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
         </div>
-        <div className="self-stretch flex flex-row items-start justify-center flex-wrap content-start gap-10 max-w-full mq750:gap-5 mq750:grid-cols-[minmax(300px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(300px,_520px))]">
+        {/* <div className="self-stretch flex flex-row items-start justify-center flex-wrap content-start gap-10 max-w-full mq750:gap-5 mq750:grid-cols-[minmax(300px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(300px,_520px))]">
           <ContentParagraphs emptyContent="/51@2x.png" />
           <ContentParagraphs emptyContent="/5-1@2x.png" />
           <ContentParagraphs emptyContent="/5-2@2x.png" />
-        </div>
-        <div className="self-stretch flex flex-col items-start justify-start gap-4 text-left">
-          <div className="relative leading-[150%] font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-            elementum tellus.
-          </div>
-          <div className="relative leading-[150%] font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus
-            enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-            Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-            lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-            elementum tellus.
-          </div>
-        </div>
+        </div> */}
         <div className="self-stretch h-[73px] flex flex-col items-start justify-start pt-0 px-0 pb-px box-border gap-6">
           <div className="self-stretch h-px relative border-gray-300 border-t-[1px] border-solid box-border" />
           <div className="self-stretch flex flex-row items-start justify-center py-0 px-5">

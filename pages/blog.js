@@ -4,7 +4,7 @@ import JoinWrapper from "../components/join-wrapper";
 import InstaPosts from "../components/insta-posts";
 import Footer from "../components/footer";
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async () => {
   try {
     const res = await fetch(
       `https://apitrivsion.prismcloudhosting.com/api/blog`

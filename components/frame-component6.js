@@ -7,7 +7,7 @@ import PreviewElements from "./preview-elements";
 import PropTypes from "prop-types";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
 
-const FrameComponent6 = memo(({ className = "" }) => {
+const FrameComponent6 = memo(({ className = "", blogs }) => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
   return (
@@ -44,12 +44,20 @@ const FrameComponent6 = memo(({ className = "" }) => {
               640: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
             }}
             className="w-full max-w-full"
           >
-            {[1, 2, 3, 4, 5, 6].map((item, index) => (
-              <SwiperSlide>
-                <PreviewElements emptyPreview="/5-3@2x.png" />
+            {blogs?.map((x, i) => (
+              <SwiperSlide key={i}>
+                <PreviewElements
+                  title={x?.title}
+                  description={x?.description?.sections?.[0]?.body}
+                  featuredImg={
+                    x?.featured_img ? x?.featured_img : "/5-3@2x.png"
+                  }
+                  slug={x?.slug}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
