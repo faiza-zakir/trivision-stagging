@@ -4,86 +4,15 @@ import PropTypes from "prop-types";
 
 const Content = memo(({ className = "" }) => {
   return (
-    <div
-      className={`h-[2080px] flex-1 relative max-w-full text-left text-xl text-black font-h4-32 ${className}`}
-    >
-      <ContentItems emptyContent="/5-3@2x.png" />
-      <ContentItems
-        contentItemsLeft="402px"
-        contentItemsTop="60px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="724px"
-        contentItemsTop="60px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="1046px"
-        contentItemsTop="60px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="80px"
-        contentItemsTop="540px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="402px"
-        contentItemsTop="540px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="724px"
-        contentItemsTop="540px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="1046px"
-        contentItemsTop="540px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="80px"
-        contentItemsTop="1020px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="402px"
-        contentItemsTop="1020px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="724px"
-        contentItemsTop="1020px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="1046px"
-        contentItemsTop="1020px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="80px"
-        contentItemsTop="1500px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="402px"
-        contentItemsTop="1500px"
-        emptyContent="/5-4@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="724px"
-        contentItemsTop="1500px"
-        emptyContent="/5-3@2x.png"
-      />
-      <ContentItems
-        contentItemsLeft="1046px"
-        contentItemsTop="1500px"
-        emptyContent="/5-4@2x.png"
-      />
-      <div className="absolute top-[1980px] left-[628.5px] bg-black w-[183px] overflow-hidden flex flex-row items-center justify-center py-2 px-[39px] box-border whitespace-nowrap text-center text-base text-background-color-primary cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
+    <div className="self-stretch flex flex-col items-center justify-start gap-10 mq750:gap-5">
+      <div
+        className={`self-stretch flex flex-row items-center justify-center flex-wrap content-start gap-x-2 gap-y-6}`}
+      >
+        {[1, 2, 3, 4, 5, 6, 7, 8, , 9, 10, 11, 12]?.map((x, i) => (
+          <ContentItems emptyContent="/5-3@2x.png" />
+        ))}
+      </div>
+      <div className="bg-black w-[183px] overflow-hidden flex flex-row items-center justify-center py-2 px-[39px] box-border whitespace-nowrap text-center text-base text-background-color-primary cursor-pointer hover:bg-white hover:text-black hover:border-[1px] hover:border-solid transition-all duration-300">
         <div className="flex-1 relative leading-[150%] font-medium">
           LOAD MORE
         </div>
