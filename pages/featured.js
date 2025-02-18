@@ -22,7 +22,7 @@ export const getServerSideProps = async ({ params }) => {
 
     return {
       props: {
-        products: data?.products?.filter((x) => x?.is_featured == "true"),
+        products: data?.products?.filter((x) => x?.is_featured == true),
       },
     };
   } catch (error) {
