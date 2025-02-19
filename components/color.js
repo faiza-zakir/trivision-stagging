@@ -10,7 +10,7 @@ const Color = memo(({ className = "", product }) => {
   const router = useRouter();
 
   const handleColorClick = (slug) => {
-    router.push(`/ProductDetails/${slug}`);
+    router.push(`/product/${slug}`);
   };
 
   return (

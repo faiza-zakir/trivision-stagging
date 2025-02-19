@@ -328,7 +328,7 @@ const FrameComponent1 = memo(({ className = "" }) => {
                 key={product?._id}
                 className="p-3 mb-2 mx-2 cursor-pointer text-sm text-black bg-gray-500"
                 onClick={() =>
-                  handleNavigation(`/ProductDetails/${product?.slug}`)
+                  handleNavigation(`/product/${product?.slug}`)
                 } // Navigate to product detail page
               >
                 {product?.product_name_short}

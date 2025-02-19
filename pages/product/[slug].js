@@ -1,65 +1,62 @@
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
-import { useRouter } from "next/router";
+import { useRef } from "react";
 import Main1 from "../../components/main1";
 import IdeologyBullets from "../../components/ideology-bullets";
 import ProductCards from "../../components/product-cards";
-import Insta from "../../components/insta";
+import JoinWrapper from "../../components/join-wrapper";
+import InstaPosts from "../../components/insta-posts";
+import ProductFaqs from "../../components/product-faqs";
 import Footer from "../../components/footer";
 import FrameComponent1 from "../../components/frame-component1";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
-import Loader from "../../components/Loader/Loader";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const SunglassesProductDetails = () => {
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const router = useRouter();
-  const { slug } = router.query;
+export const getServerSideProps = async ({ params }) => {
+  try {
+    if (!params?.slug) {
+      return { notFound: true };
+    }
+
+    const res = await fetch(
+      `https://apitrivsion.prismcloudhosting.com/api/products/${params?.slug}`
+    );
+
+    if (!res.ok) {
+      console.error("Failed to fetch data from the API");
+      return { notFound: true };
+    }
+
+    const data = await res.json();
+
+    if (!data) {
+      return { notFound: true };
+    }
+
+    return {
+      props: {
+        product: data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data in getServerSideProps:", error);
+    return { notFound: true };
+  }
+};
+
+const ProductDetails = ({ product, error }) => {
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
-  console.log(slug, "slug");
 
-  useEffect(() => {
-    if (!slug) return;
-
-    const fetchProduct = async () => {
-      try {
-        const res = await fetch(
-          `https://apitrivsion.prismcloudhosting.com/api/products/${slug}`
-        );
-        const data = await res.json();
-        if (!data.product) {
-          setError("Product not found");
-        } else {
-          setProduct(data);
-        }
-      } catch (err) {
-        setError("Failed to fetch product data");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProduct();
-  }, [slug]);
-
-  const addCart = () => {
-    alert("Product added to cart!");
-  };
-
-  if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
-  if (!product) return null;
+  if (!product) return <p>Product not found</p>;
 
   return (
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center">
       <FrameComponent1 />
-      <Main1 product={product} />
+      <Main1 product={product} category={product?.product?.category?.slug} />
       <section
         className="flex items-center justify-center py-20 px-10 bg-cover bg-no-repeat"
         style={{ backgroundImage: "url('/video1@3x.png')" }}
@@ -81,17 +78,17 @@ const SunglassesProductDetails = () => {
           />
         ))}
       </div>
-      <section className="w-[1400px] flex flex-row items-center justify-center pt-0 px-10 pb-[60px] box-border max-w-full text-center text-21xl text-black font-h4-32 mq825:pb-[39px] mq825:box-border">
-        <div className="flex-1 flex flex-col items-center justify-center gap-10 max-w-full mq825:gap-5">
-          <div className="w-[1279.5px] flex flex-row items-center justify-center py-0 pl-[463px] pr-[464px] box-border max-w-full mq450:pl-5 mq450:pr-5 mq450:box-border mq825:pl-[115px] mq825:pr-[116px] mq825:box-border mq1410:pl-[231px] mq1410:pr-[232px] mq1410:box-border">
-            <h1 className="m-0 flex-1 relative text-inherit leading-[120%] font-medium font-[inherit] mq450:text-5xl mq450:leading-[29px] mq825:text-13xl mq825:leading-[38px]">
+      <section className="w-[1400px] flex flex-row items-center justify-center pt-0 px-10 pb-[60px] box-border max-w-full text-center text-21xl text-black font-h4-32">
+        <div className="flex-1 flex flex-col items-center justify-center gap-10 max-w-full">
+          <div className="w-[1279.5px] flex flex-row items-center justify-center">
+            <h1 className="m-0 flex-1 text-inherit leading-[120%] font-medium">
               Related Products
             </h1>
           </div>
           <div className="self-stretch flex flex-row items-center justify-center gap-4 max-w-full">
             <button
               ref={prevButtonRef}
-              className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
+              className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300"
             >
               <FaAngleLeft size={20} />
             </button>
@@ -120,12 +117,6 @@ const SunglassesProductDetails = () => {
                     key={index}
                     product_id={relatedProduct._id}
                     imgBackgroundImage={relatedProduct.product_images[0]}
-                    colorOptionJustifyContent="space-between"
-                    next="/pending_I807:4280;491:5147"
-                    next1="/pending_I807:4280;491:5150"
-                    priceContainerJustifyContent="space-between"
-                    iconamoonheartLight="/iconamoonheartlight1.svg"
-                    sVG="/svg-11.svg"
                     productItem={relatedProduct}
                     name={relatedProduct.product_name_short}
                     brand_name={relatedProduct.brand.name}
@@ -137,19 +128,26 @@ const SunglassesProductDetails = () => {
             </Swiper>
             <button
               ref={nextButtonRef}
-              className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300 focus:outline-none flex items-center justify-center"
+              className="p-2 rounded-full bg-gray-200 shadow-lg hover:bg-gray-300"
             >
               <FaAngleRight size={20} />
             </button>
           </div>
         </div>
       </section>
-      <Insta
-        instaImages="/8@2x.png"
-        instaImages1="/7@2x.png"
-        instaImages2="/6@2x.png"
-        instaImages3="/5@2x.png"
-      />
+      <section className="self-stretch flex flex-col items-center justify-center pb-[60px] mq480:pb-[40px] pt-0 px-10 gap-[60px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
+        <JoinWrapper
+          joinWrapperPadding="0px 20px 0px 0px"
+          joinWrapperFlex="unset"
+          joinWrapperAlignSelf="unset"
+          emptyPlaceholders="/8@2x.png"
+          emptyPlaceholders1="/7@2x.png"
+          emptyPlaceholders2="/6@2x.png"
+          emptyPlaceholders3="/5@2x.png"
+        />
+        <ProductFaqs faqs={product?.brand?.faqs} />
+        <InstaPosts />
+      </section>
       <Footer
         maskGroup="/mask-group@2x.png"
         iconYoutube="/icon--youtube-1.svg"
@@ -158,4 +156,4 @@ const SunglassesProductDetails = () => {
   );
 };
 
-export default SunglassesProductDetails;
+export default ProductDetails;

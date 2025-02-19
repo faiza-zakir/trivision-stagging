@@ -24,7 +24,7 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
   };
 
   const handleNavigation = (slug) => {
-    router.push(`/ProductDetails/${slug}`);
+    router.push(`/product/${slug}`);
   };
 
   // Sorting logic
