@@ -106,7 +106,7 @@ const Footer = memo(
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/about")}
+                    onClick={() => handleNavigation("/about-us")}
                   >
                     About Us
                   </div>
@@ -134,7 +134,7 @@ const Footer = memo(
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/contact")}
+                    onClick={() => handleNavigation("/contact-us")}
                   >
                     Contact Us
                   </div>
@@ -167,19 +167,19 @@ const Footer = memo(
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/Shipping&Delevery")}
+                    onClick={() => handleNavigation("/shipping-delivery")}
                   >{`Shipping & Delivery`}</div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0 cursor-pointer ">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/Return&Exchange")}
+                    onClick={() => handleNavigation("/return-policy")}
                   >{`Returns & Exchange`}</div>
                 </div>
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0 cursor-pointer">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/Priviacy&Policy")}
+                    onClick={() => handleNavigation("/privacy-policy")}
                   >
                     Privacy Policy
                   </div>
@@ -187,7 +187,7 @@ const Footer = memo(
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0 cursor-pointer">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/Term&Condition")}
+                    onClick={() => handleNavigation("/terms-conditions")}
                   >
                     Terms of Service
                   </div>

@@ -64,7 +64,7 @@ const CustomerAccount = () => {
   };
 
   const handleNavigation = () => {
-    router.push("/Register");
+    router.push("/register");
   };
 
   return (
