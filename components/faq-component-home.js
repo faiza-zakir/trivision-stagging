@@ -16,9 +16,9 @@ const FaqComponentHome = memo(({ className = "" }) => {
         className={`flex flex-row items-center justify-center box-border gap-[74px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[37px] mq480:gap-[18px] ${className}`}
       >
         <div className="self-stretch flex flex-row mq480:flex-col items-center justify-center gap-[60px] max-w-full mq750:gap-[30px]">
-          <div className="flex flex-row items-center justify-center pt-11 px-0 pb-0 box-border max-w-full mq750:pt-[29px] mq750:box-border mq750:min-w-full">
+          <div className="flex flex-row items-center justify-center px-0 pb-0 box-border max-w-full mq750:box-border mq750:min-w-full">
             <div className="self-stretch flex flex-col items-center justify-center gap-10 max-w-full mq750:gap-5">
-              <div className="self-stretch flex flex-col items-center justify-center py-0 px-5 box-border max-w-full">
+              <div className="self-stretch flex flex-col items-start justify-center py-0 mq480:items-center mq480:px-5 box-border max-w-full">
                 <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] text-center max-w-full mq480:text-xl mq750:text-13xl mq750:leading-[38px] mq480:text-5xl mq480:leading-[29px] mq480:text-xl">
                   Frequently Asked Questions
                 </h1>
