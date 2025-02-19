@@ -8,13 +8,13 @@ import ProductCards from "../components/product-cards";
 import FrameComponent2 from "../components/frame-component2";
 import JoinWrapper from "../components/join-wrapper";
 import FaqComponentHome from "../components/faq-component-home";
+import InstaPosts from "../components/insta-posts";
 import Footer from "../components/footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"; // Import icons
-import InstaPosts from "../components/insta-posts";
 import BrandItems from "../components/brand-items";
 
 const Home = () => {

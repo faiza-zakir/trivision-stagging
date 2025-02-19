@@ -7,9 +7,8 @@ const BrandMenu = memo(({ className = "", brands }) => {
   const router = useRouter();
 
   const handleNavigation = (slug) => {
-    router.push(`/Brand/${slug}`);
+    router.push(`/brand/${slug}`);
   };
-  //
 
   return (
     <div

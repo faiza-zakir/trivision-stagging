@@ -10,7 +10,7 @@ const EyeGlassesMblMenu = memo(({ className = "", category }) => {
       (cat) => cat.slug.toLowerCase() === "eyeglasses"
     );
     if (eyeglassesCategory) {
-      router.push(`/Eyeglasses/${eyeglassesCategory.slug}`);
+      router.push(`/Eyeglasses/${eyeglassesCategory?.slug?.toLowerCase()}`);
     }
   };
 

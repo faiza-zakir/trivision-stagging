@@ -39,7 +39,7 @@ const ContactLensMblMenu = memo(({ className = "", brands }) => {
   }, []);
 
   const handleNavigation = (slug) => {
-    router.push(`/ContactLenses/${slug}`);
+    router.push(`/contact-lens/${slug}`);
   };
 
   return (

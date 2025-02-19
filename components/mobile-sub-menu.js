@@ -7,7 +7,7 @@ const MobileSubMenu = memo(({ className = "", category }) => {
   const router = useRouter();
 
   const handleNavigation = (slug) => {
-    router.push(`/Sunglasses/${slug}`);
+    router.push(`/sunglasses/${slug?.toLowerCase()}`);
   };
 
   const handleNavigationGender = (gender, slug) => {

@@ -1,107 +1,18 @@
-// import Image from "next/image";
-// import FrameComponent1 from "../../components/frame-component1";
-// import FiltersAndProducts from "../../components/eyeglasses/filter&product";
-// import FrameComponent4 from "../../components/frame-component4";
-// import Footer from "../../components/footer";
-
-// export const getStaticPaths = async () => {
-//   try {
-//     const res = await fetch(
-//       "https://apitrivsion.prismcloudhosting.com/api/category/all"
-//     );
-//     const data = await res.json();
-
-//     if (!data || !Array.isArray(data)) {
-//       return { paths: [], fallback: "blocking" };
-//     }
-
-//     const paths = data
-//       .filter((item) => item.slug)
-//       .map((item) => ({
-//         params: { slug: item.slug },
-//       }));
-
-//     return {
-//       paths,
-//       fallback: "blocking",
-//     };
-//   } catch (error) {
-//     console.error("Error in getStaticPaths:", error);
-//     return { paths: [], fallback: "blocking" };
-//   }
-// };
-
-// export const getStaticProps = async ({ params }) => {
-//   try {
-//     //
-//     // const categorySlug = params.slug;
-//     // if (!categorySlug) {
-//     //   console.error("Category slug is not provided in params");
-//     //   return { notFound: true };
-//     // }
-//     //
-
-//     const res = await fetch(
-//       `https://apitrivsion.prismcloudhosting.com/api/products/category/${params.slug}`
-//     );
-//     if (!res.ok) {
-//       console.error("Failed to fetch data from the API");
-//       return { notFound: true };
-//     }
-//     const data = await res.json();
-//     if (!data.products || data.products.length === 0) {
-//       // console.warn("No products found for brand slug:", categorySlug);
-//       return { notFound: true };
-//     }
-//     return {
-//       props: {
-//         products: data.products, // Ensure it matches the API response structure
-//       },
-//       revalidate: 60,
-//     };
-//   } catch (error) {
-//     console.error("Error fetching data in getStaticProps:", error);
-//     return { notFound: true };
-//   }
-// };
-
-// // Main component to render the product listing
-// const ProductListing = ({ products }) => {
-//   return (
-//     <>
-//       <FrameComponent1 />
-//       <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[34px] leading-[normal] tracking-[normal] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[17px]">
-//         <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-[26px] box-border max-w-full">
-//           <div className="flex-1 overflow-hidden flex flex-col items-end justify-end pt-[340px] px-[284px] pb-[60px] box-border gap-6 bg-[url('/banner1@3x.png')] bg-cover bg-no-repeat bg-[top] max-w-full mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq750:box-border mq480:pl-5 mq480:pr-5 mq480:box-border"></div>
-//         </div>
-//         <section className="w-[1440px] flex flex-row items-start justify-start pt-0 px-20 pb-[26px] box-border max-w-full mq750:pl-10 mq750:pr-10 mq750:box-border">
-//           <FiltersAndProducts product={products} />
-//         </section>
-//         <FrameComponent4 product={products} />
-//         <Footer
-//           maskGroup="/mask-group@2x.png"
-//           formMargin="0"
-//           iconYoutube="/icon--youtube21.svg"
-//           itemImg="/item--img3.svg"
-//           itemImg1="/item--img-13.svg"
-//           itemImg2="/item--img-14.svg"
-//         />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default ProductListing;
-
 import FrameComponent1 from "../../components/frame-component1";
 import FiltersAndProducts from "../../components/eyeglasses/filter&product";
-import FrameComponent4 from "../../components/frame-component4";
+import JoinWrapper from "../../components/join-wrapper";
+import InstaPosts from "../../components/insta-posts";
 import Footer from "../../components/footer";
+import ProductFaqs from "../../components/product-faqs";
 
 export const getServerSideProps = async ({ params }) => {
   try {
+    if (!params?.slug) {
+      return { notFound: true };
+    }
+
     const res = await fetch(
-      `https://apitrivsion.prismcloudhosting.com/api/products/category/${params.slug}`
+      `https://apitrivsion.prismcloudhosting.com/api/products/category/${params?.slug?.toUpperCase()}`
     );
 
     if (!res.ok) {
@@ -126,22 +37,30 @@ export const getServerSideProps = async ({ params }) => {
   }
 };
 
-const ProductListing = ({ products }) => {
+const EyeglassesListing = ({ products }) => {
   return (
     <>
       <FrameComponent1 />
-      <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[34px] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[17px]">
+      <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[60px] mq480:gap-[40px] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[40px]">
         {/* Banner Section */}
         <div className="w-full bg-[url('/eyeglassbanner.jpg')] bg-cover bg-no-repeat bg-center h-[60vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
-
         {/* Products & Filters */}
-        <section className="w-[1440px] flex flex-row items-start justify-start px-20 pb-[26px] pt-[60px] box-border max-w-full mq750:px-10">
+        <section className="w-[1440px] flex flex-row items-start justify-start px-20 box-border max-w-full mq750:px-10">
           <FiltersAndProducts product={products} />
         </section>
-
-        {/* Additional Component */}
-        <FrameComponent4 product={products} />
-
+        <section className="self-stretch flex flex-col items-center justify-center pt-0 px-10 gap-[60px] mq480:px-3 box-border relative max-w-full text-center text-21xl text-black font-h4-32 mq750:pb-[39px] mq750:box-border">
+          <JoinWrapper
+            joinWrapperPadding="0px 20px 0px 0px"
+            joinWrapperFlex="unset"
+            joinWrapperAlignSelf="unset"
+            emptyPlaceholders="/8@2x.png"
+            emptyPlaceholders1="/7@2x.png"
+            emptyPlaceholders2="/6@2x.png"
+            emptyPlaceholders3="/5@2x.png"
+          />
+          <ProductFaqs faqs={products?.[0]?.brand?.faqs} />
+          <InstaPosts />
+        </section>
         {/* Footer */}
         <Footer
           maskGroup="/mask-group@2x.png"
@@ -156,4 +75,4 @@ const ProductListing = ({ products }) => {
   );
 };
 
-export default ProductListing;
+export default EyeglassesListing;

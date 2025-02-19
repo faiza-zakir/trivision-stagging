@@ -1,5 +1,5 @@
 import FrameComponent1 from "../../components/frame-component1";
-import FiltersAndProducts from "../../components/sunglasses/filter&product";
+import FiltersAndProducts from "../../components/contactlenses/filter&product";
 import JoinWrapper from "../../components/join-wrapper";
 import InstaPosts from "../../components/insta-posts";
 import Footer from "../../components/footer";
@@ -10,29 +10,18 @@ export const getServerSideProps = async ({ params }) => {
     if (!params?.slug) {
       return { notFound: true };
     }
-
-    // Capitalize the first letter of the slug
-    const formattedSlug =
-      params.slug.charAt(0).toUpperCase() + params.slug.slice(1);
-
     const res = await fetch(
-      `https://apitrivsion.prismcloudhosting.com/api/products/category/${formattedSlug}`
+      `https://apitrivsion.prismcloudhosting.com/api/contactlens/brand/${params.slug}`
     );
-
-    if (!res.ok) {
-      console.error("Failed to fetch data from the API");
-      return { notFound: true };
-    }
-
     const data = await res.json();
 
-    if (!data.products || data.products.length === 0) {
+    if (!data || data.length === 0) {
       return { notFound: true };
     }
 
     return {
       props: {
-        products: data.products,
+        products: data,
       },
     };
   } catch (error) {
@@ -41,13 +30,13 @@ export const getServerSideProps = async ({ params }) => {
   }
 };
 
-const SunglassesListing = ({ products }) => {
+const ContactLensListing = ({ products }) => {
   return (
     <>
       <FrameComponent1 />
       <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center px-0 pb-0 box-border gap-[60px] mq480:gap-[40px] text-center text-base text-background-color-primary font-h4-32 mq750:gap-[40px]">
         {/* Banner Section */}
-        <div className="w-full bg-[url('/sunglassesBanner.jpg')] bg-cover bg-no-repeat bg-center h-[80vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
+        <div className="w-full bg-[url('/lensbanner.jpg')] bg-cover bg-no-repeat bg-center h-[70vh] mq750:pt-[221px] mq750:px-[142px] mq750:pb-[39px] mq480:px-5" />
         {/* Products & Filters */}
         <section className="w-[1440px] flex flex-row items-start justify-start px-20 box-border max-w-full mq750:px-10">
           <FiltersAndProducts product={products} />
@@ -65,6 +54,7 @@ const SunglassesListing = ({ products }) => {
           <ProductFaqs faqs={products?.[0]?.brand?.faqs} />
           <InstaPosts />
         </section>
+        {/* Footer */}
         <Footer
           maskGroup="/mask-group@2x.png"
           formMargin="0"
@@ -78,4 +68,4 @@ const SunglassesListing = ({ products }) => {
   );
 };
 
-export default SunglassesListing;
+export default ContactLensListing;

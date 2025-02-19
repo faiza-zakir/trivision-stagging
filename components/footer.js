@@ -57,7 +57,7 @@ const Footer = memo(
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/Brand/blancia")}
+                    onClick={() => handleNavigation("/brand/blancia")}
                   >
                     Brands
                   </div>
@@ -81,7 +81,7 @@ const Footer = memo(
                 <div className="self-stretch flex flex-row items-start justify-start py-1 px-0">
                   <div
                     className="flex-1 relative leading-[150%] font-medium cursor-pointer"
-                    onClick={() => handleNavigation("/ContactLenses/bella")}
+                    onClick={() => handleNavigation("/contact-lens/bella")}
                   >
                     Contact Lens
                   </div>

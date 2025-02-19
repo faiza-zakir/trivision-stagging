@@ -38,7 +38,7 @@ const ContactLensMenu = memo(({ className = "" }) => {
   }, []);
 
   const handleNavigation = (slug) => {
-    router.push(`/ContactLenses/${slug}`);
+    router.push(`/contact-lens/${slug}`);
   };
 
   //
