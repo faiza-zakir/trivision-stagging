@@ -107,15 +107,16 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
               >
                 <ProductCards
                   {...productItem}
-                  product_id={productItem._id}
-                  name={productItem.product_name_short}
-                  price={productItem.retail_price}
+                  product_id={productItem?._id}
+                  brand_name={productItem?.brand?.name}
+                  name={productItem?.product_name_short}
+                  price={productItem?.retail_price}
                   imgBackgroundImage={firstImageUrl} // ✅ Dynamically passed image URL
                   colorOptionJustifyContent="center"
                   priceContainerJustifyContent="center"
                   iconamoonheartLight="/iconamoonheartlight-2.svg"
                   sVG="/svg-3.svg"
-                  slug={productItem.slug}
+                  slug={productItem?.slug}
                   onAddToCart={(e) => e.stopPropagation()} // Stop navigation for Add to Cart
                   onAddToWishlist={(e) => e.stopPropagation()} // Stop navigation for Wishlist
                 />

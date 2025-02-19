@@ -29,7 +29,7 @@ const SunglassesProductDetails = () => {
     const fetchProduct = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5055/api/accesories/slug/${slug}`
+          `https://apitrivsion.prismcloudhosting.com/api/accesories/slug/${slug}`
         );
         const data = await res.json();
         // console.log(data.data.product_name_long, "hi")
@@ -52,7 +52,7 @@ const SunglassesProductDetails = () => {
   if (error) return <p>{error}</p>;
   if (!product) return null;
 
-//   console.log(product.data.category.name, "for")
+  //   console.log(product.data.category.name, "for")
 
   return (
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-center justify-center">

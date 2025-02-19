@@ -25,7 +25,7 @@ const ProductListing = () => {
 
       try {
         const res = await fetch(
-          `http://localhost:5055/api/products/products/new-arrivals?category=${slug}&page=1&limit=10`
+          `https://apitrivsion.prismcloudhosting.com/api/products/products/new-arrivals?category=${slug}&page=1&limit=10`
         );
 
         if (!res.ok) {
@@ -57,7 +57,7 @@ const ProductListing = () => {
     return <div>Error: {error}</div>;
   }
 
-  console.log(products, "hi too ")
+  console.log(products, "hi too ");
   return (
     <>
       <FrameComponent1 />

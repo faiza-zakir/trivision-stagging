@@ -107,6 +107,7 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
                 <ProductCards
                   {...productItem}
                   product_id={productItem._id}
+                  brand_name={productItem?.brand?.name}
                   name={productItem.product_name_short}
                   price={productItem.retail_price}
                   imgBackgroundImage={firstImageUrl} // ✅ Dynamically passed image URL

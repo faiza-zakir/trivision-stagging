@@ -27,7 +27,7 @@ const Home = () => {
     const fetchNewArrivals = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5055/api/products/products/new-arrivals"
+          "https://apitrivsion.prismcloudhosting.com/api/products/products/new-arrivals"
         );
         if (response.data.success) {
           setNewArrivals(response.data.data);
@@ -214,6 +214,7 @@ const Home = () => {
                     }
                     price={product.retail_price}
                     name={product.product_name_short}
+                    brand_name={product?.brand?.name}
                     colorOptionJustifyContent="center"
                     priceContainerJustifyContent="center"
                     iconamoonheartLight={`/iconamoonheartlight.svg`}

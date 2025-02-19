@@ -16,7 +16,9 @@ const Bestseller = memo(({ className = "" }) => {
   useEffect(() => {
     const fetchBestSellers = async () => {
       try {
-        const response = await axios.get("http://localhost:5055/api/products/products/best-sellers");
+        const response = await axios.get(
+          "https://apitrivsion.prismcloudhosting.com/api/products/products/best-sellers"
+        );
         if (response.data.success) {
           setBestSellers(response.data.data);
         }
@@ -82,6 +84,7 @@ const Bestseller = memo(({ className = "" }) => {
                 imgBackgroundImage={product.product_images[0] || "default.jpg"}
                 price={product.retail_price}
                 name={product.product_name_short}
+                brand_name={product?.brand?.name}
                 colorOptionJustifyContent="center"
                 priceContainerJustifyContent="center"
                 iconamoonheartLight={`/iconamoonheartlight.svg`}

@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 export const getServerSideProps = async ({ params }) => {
   try {
     const res = await fetch(
-      `http://localhost:5055/api/accesories/`
+      `https://apitrivsion.prismcloudhosting.com/api/accesories/`
     );
 
     if (!res.ok) {

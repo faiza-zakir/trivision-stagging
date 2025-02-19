@@ -104,7 +104,7 @@ const ProductCards = memo(
 
     return (
       <div
-        className={`h-[350px] bg-gray-600 flex flex-col items-center justify-start pt-0 px-0 pb-4 gap-4 text-left text-xs text-black font-h4-32 ${className}`}
+        className={`h-full bg-gray-600 flex flex-col items-center justify-start pt-0 px-0 pb-4 gap-4 text-left text-xs text-black font-h4-32 ${className}`}
       >
         <div
           className="w-[350px] relative h-[250px] overflow-hidden shrink-0 bg-contain bg-center bg-no-repeat"
@@ -140,7 +140,7 @@ const ProductCards = memo(
         </div>
         <div className="w-[290px] flex flex-col items-center justify-center gap-3 text-sm mq480:w-[240px]">
           <div className="self-stretch flex flex-row items-center justify-center text-base text-gray-400 font-oswald">
-            <div className="self-stretch flex flex-row items-center justify-center text-base text-gray-400 font-oswald flex-1 relative leading-[150%] font-semibold">
+            <div className="self-stretch flex flex-row items-center justify-start text-base text-gray-400 font-oswald flex-1 relative leading-[150%] font-semibold">
               {brand_name}
             </div>
           </div>
@@ -148,7 +148,7 @@ const ProductCards = memo(
             className="self-stretch flex flex-row items-center justify-center"
             style={priceContainerStyle}
           >
-            <div className="self-stretch flex flex-row items-center justify-center flex-1 relative leading-[150%] font-medium">
+            <div className="self-stretch flex flex-row items-center justify-start flex-1 relative leading-[150%] font-medium">
               {name}
             </div>
           </div>
