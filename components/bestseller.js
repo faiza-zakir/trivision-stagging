@@ -20,7 +20,7 @@ const Bestseller = memo(({ className = "" }) => {
           "https://apitrivsion.prismcloudhosting.com/api/products/products/best-sellers"
         );
         if (response.data.success) {
-          setBestSellers(response.data.data);
+          setBestSellers(response.data.bestSellers);
         }
       } catch (error) {
         console.error("Error fetching best sellers:", error);

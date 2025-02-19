@@ -31,7 +31,7 @@ const Home = () => {
           "https://apitrivsion.prismcloudhosting.com/api/products/products/new-arrivals"
         );
         if (response.data.success) {
-          setNewArrivals(response.data.data);
+          setNewArrivals(response.data.newArrivals);
         }
       } catch (error) {
         console.error("Error fetching new arrivals:", error);

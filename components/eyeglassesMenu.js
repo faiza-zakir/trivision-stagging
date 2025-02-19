@@ -18,6 +18,9 @@ const Menu = memo(({ className = "", category }) => {
   const handleNavigationNewArrivals = (slug) => {
     router.push(`/New-Arraivals/${slug}`)
   }
+  const handleNavigationBestSeller = (slug) => {
+    router.push(`/Best-Seller/${slug}`)
+  }
 
   const handleNavigationGender = (gender, slug) => {
     router.push(`/${gender}/${slug}`);
@@ -43,7 +46,9 @@ const Menu = memo(({ className = "", category }) => {
             </div>
           </div>
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
-            <div className="relative leading-[150%] uppercase font-medium inline-block min-w-[105px] cursor-pointer">
+            <div className="relative leading-[150%] uppercase font-medium inline-block min-w-[105px] cursor-pointer"
+              onClick={() => handleNavigationBestSeller(category[4].slug)}
+            >
               BEST SELLERS
             </div>
           </div>
