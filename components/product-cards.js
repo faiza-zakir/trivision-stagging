@@ -107,7 +107,7 @@ const ProductCards = memo(
         className={`h-full bg-gray-600 flex flex-col items-center justify-start pt-0 px-0 pb-4 gap-4 text-left text-xs text-black font-h4-32 ${className}`}
       >
         <div
-          className="w-[350px] relative h-[250px] overflow-hidden shrink-0 bg-contain bg-center bg-no-repeat"
+          className="w-[314px] relative h-[250px] overflow-hidden shrink-0 bg-contain bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${imgBackgroundImage})`,
             mixBlendMode: "multiply", // Apply blending

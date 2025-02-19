@@ -225,8 +225,8 @@ const SunglassesListing = () => {
         </div>
       </section>
       <section className="flex flex-col items-start justify-start py-0 pl-5 pr-0 box-border gap-[74px] max-w-full text-left text-21xl text-black font-h4-32 mq750:gap-[37px] mq480:gap-[18px]">
-        <div className="self-stretch flex flex-row items-start justify-start gap-[60px] max-w-full mq750:gap-[30px] mq1275:flex-wrap">
-          <div className="flex flex-col items-start justify-start pt-11 px-0 pb-0 box-border max-w-full mq750:pt-[29px] mq750:box-border mq750:min-w-full mq1275:flex-1">
+        <div className="self-stretch flex flex-row items-start justify-start gap-[60px] max-w-full mq750:gap-[30px] mq1280:flex-wrap">
+          <div className="flex flex-col items-start justify-start pt-11 px-0 pb-0 box-border max-w-full mq750:pt-[29px] mq750:box-border mq750:min-w-full mq1280:flex-1">
             <div className="self-stretch flex flex-col items-start justify-start gap-10 max-w-full mq750:gap-5">
               <div className="self-stretch flex flex-col items-start justify-start py-0 pl-0 pr-5 box-border max-w-full">
                 <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] inline-block max-w-full mq750:text-13xl mq750:leading-[38px] mq480:text-xl mq480:leading-[29px]">
@@ -418,7 +418,7 @@ const SunglassesListing = () => {
             src="/image-container@2x.png"
           />
         </div>
-        <div className="flex flex-row items-start justify-start py-0 pl-0 pr-5 box-border max-w-full [row-gap:20px] mq1275:flex-wrap">
+        <div className="flex flex-row items-start justify-start py-0 pl-0 pr-5 box-border max-w-full [row-gap:20px] mq1280:flex-wrap">
           <ImagePlaceholders
             imagePlaceholdersFlex="unset"
             imagePlaceholdersMinWidth="unset"

@@ -15,7 +15,7 @@ const FrameComponent11 = memo(({ className = "" }) => {
         alt=""
         src="/image-container2@2x.png"
       />
-      <div className="w-[612px] flex flex-col items-start justify-start pt-[146px] px-0 pb-0 box-border max-w-full mq750:pt-[95px] mq750:box-border mq750:min-w-full mq1275:flex-1">
+      <div className="w-[612px] flex flex-col items-start justify-start pt-[146px] px-0 pb-0 box-border max-w-full mq750:pt-[95px] mq750:box-border mq750:min-w-full mq1280:flex-1">
         <div className="self-stretch flex flex-col items-start justify-start gap-6">
           <div className="self-stretch flex flex-row items-start justify-start mq480:gap-[437px]">
             <h1 className="m-0 relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">

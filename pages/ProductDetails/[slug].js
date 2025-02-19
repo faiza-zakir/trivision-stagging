@@ -22,7 +22,7 @@ const SunglassesProductDetails = () => {
   const { slug } = router.query;
   const prevButtonRef = useRef(null);
   const nextButtonRef = useRef(null);
-  console.log(slug, "slug")
+  console.log(slug, "slug");
 
   useEffect(() => {
     if (!slug) return;

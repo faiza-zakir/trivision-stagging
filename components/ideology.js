@@ -7,7 +7,7 @@ const Ideology = memo(({ className = "" }) => {
     <div
       className={`self-stretch flex flex-col items-center justify-start py-[60px] px-20 box-border gap-10 max-w-full z-[1] text-center text-21xl text-black font-h4-32 mq750:gap-5 mq750:py-[39px] mq750:px-10 mq750:box-border ${className}`}
     >
-      <div className="self-stretch flex flex-row items-start justify-center max-w-full mq480:gap-[109px] mq750:gap-[219px] mq1275:gap-[437px]">
+      <div className="self-stretch flex flex-row items-start justify-center max-w-full mq480:gap-[109px] mq750:gap-[219px] mq1280:gap-[437px]">
         <h1 className="m-0 flex-1 relative text-inherit leading-[120%] font-medium font-[inherit] inline-block max-w-full mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
           Our Ideology Behind Our Products
         </h1>

@@ -16,8 +16,8 @@ const FrameComponent3 = memo(({ className = "" }) => {
           alt=""
           src="/iconamoonarrowup2@2x.png"
         />
-        <div className="flex flex-col items-start justify-start pt-[3px] px-0 pb-0 mq1275:w-[-1px]">
-          <div className="self-stretch relative leading-[150%] font-medium mq1275:hidden">
+        <div className="flex flex-col items-start justify-start pt-[3px] px-0 pb-0 mq1280:w-[-1px]">
+          <div className="self-stretch relative leading-[150%] font-medium mq1280:hidden">
             Sale: 20% Off - Limited Time Only
           </div>
         </div>
