@@ -36,7 +36,7 @@ const Bestseller = memo(({ className = "" }) => {
     >
       <div className="flex flex-row items-start justify-end py-0 pl-[491px] pr-[492px] box-border max-w-full mq480:pl-5 mq480:pr-5 mq750:pl-[122px] mq750:pr-[123px] mq1250:pl-[245px] mq1250:pr-[246px]">
         <h1 className="m-0 flex-1 relative text-inherit leading-[120%] font-medium font-[inherit] mq480:text-5xl mq480:leading-[29px] mq750:text-13xl mq750:leading-[38px]">
-        Best Sellers
+          Best Sellers
         </h1>
       </div>
 
@@ -78,7 +78,7 @@ const Bestseller = memo(({ className = "" }) => {
               </div>
             </div>
           </SwiperSlide>
-          {bestSellers.map((product) => (
+          {bestSellers?.map((product) => (
             <SwiperSlide key={product._id}>
               <ProductCards
                 imgBackgroundImage={product.product_images[0] || "default.jpg"}

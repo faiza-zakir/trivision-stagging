@@ -197,7 +197,7 @@ const Home = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              {newArrivals.map((product) => (
+              {newArrivals?.map((product) => (
                 <SwiperSlide key={product._id}>
                   <ProductCards
                     imgBackgroundImage={
