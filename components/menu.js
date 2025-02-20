@@ -36,7 +36,7 @@ const Menu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] uppercase font-medium cursor-pointer"
-              onClick={() => handleNavigation(category[5].slug)}
+              onClick={() => handleNavigation(category[5]?.slug)}
             >
               ALL SUNGLASSES
             </div>
@@ -44,7 +44,7 @@ const Menu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] uppercase font-medium inline-block min-w-[105px] cursor-pointer"
-              onClick={() => handleNavigationBestSeller(category[5].slug)}
+              onClick={() => handleNavigationBestSeller(category[5]?.slug)}
             >
               BEST SELLERS
             </div>
@@ -52,7 +52,7 @@ const Menu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] uppercase font-medium cursor-pointer"
-              onClick={() => handleNavigationNewArrivals(category[5].slug)}
+              onClick={() => handleNavigationNewArrivals(category[5]?.slug)}
             >
               NEW ARRIVALS
             </div>
@@ -60,7 +60,7 @@ const Menu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] uppercase font-medium cursor-pointer"
-              onClick={() => handleNavigationGender("Men", category[5].slug)}
+              onClick={() => handleNavigationGender("Men", category[5]?.slug)}
             >
               FOR MEN
             </div>
@@ -68,7 +68,7 @@ const Menu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] uppercase font-medium cursor-pointer"
-              onClick={() => handleNavigationGender("Women", category[5].slug)}
+              onClick={() => handleNavigationGender("Women", category[5]?.slug)}
             >
               FOR WOMEN
             </div>
@@ -76,7 +76,7 @@ const Menu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] uppercase font-medium inline-block min-w-[71px] cursor-pointer"
-              onClick={() => handleNavigationGender("Kids", category[5].slug)}
+              onClick={() => handleNavigationGender("Kids", category[5]?.slug)}
             >
               FOR KIDS
             </div>
