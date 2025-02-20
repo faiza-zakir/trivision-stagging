@@ -73,6 +73,7 @@ const Wishlist = () => {
   if (loading) {
     return <Loader />;
   }
+  console.log(orders, "hi");
 
   return (
     <div className="w-full relative bg-gray-100 overflow-hidden flex flex-col items-start justify-start leading-[normal] tracking-[normal]">
