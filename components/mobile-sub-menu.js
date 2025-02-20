@@ -27,7 +27,7 @@ const MobileSubMenu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] text-xs uppercase cursor-pointer"
-              onClick={() => handleNavigation(category[5].slug)}
+              onClick={() => handleNavigation(category[5]?.slug)}
             >
               All Sunglasses
             </div>
@@ -45,7 +45,7 @@ const MobileSubMenu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] text-xs uppercase cursor-pointer"
-              onClick={() => handleNavigationGender("Men", category[5].slug)}
+              onClick={() => handleNavigationGender("Men", category[5]?.slug)}
             >
               For Men
             </div>
@@ -53,7 +53,7 @@ const MobileSubMenu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] text-xs uppercase cursor-pointer"
-              onClick={() => handleNavigationGender("Women", category[5].slug)}
+              onClick={() => handleNavigationGender("Women", category[5]?.slug)}
             >
               For Women
             </div>
@@ -61,7 +61,7 @@ const MobileSubMenu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] text-xs uppercase cursor-pointer"
-              onClick={() => handleNavigationGender("Kids", category[5].slug)}
+              onClick={() => handleNavigationGender("Kids", category[5]?.slug)}
             >
               For Kids
             </div>

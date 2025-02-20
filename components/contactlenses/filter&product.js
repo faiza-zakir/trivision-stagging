@@ -99,7 +99,7 @@ const FiltersAndProducts = memo(({ className = "", product = [] }) => {
             return (
               <div
                 key={productItem._id}
-                onClick={() => handleNavigation(productItem.slug)}
+                onClick={() => handleNavigation(productItem?.slug)}
                 className="cursor-pointer"
               >
                 <ProductCards

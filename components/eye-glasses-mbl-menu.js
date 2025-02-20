@@ -32,7 +32,7 @@ const EyeGlassesMblMenu = memo(({ className = "", category }) => {
           <div className="self-stretch flex flex-row items-center justify-start py-1.5 px-0">
             <div
               className="relative leading-[150%] text-xs uppercase cursor-pointer"
-              onClick={() => handleNavigation(category.slug)}
+              onClick={() => handleNavigation(category[4]?.slug)}
             >
               All Eyeglasses
             </div>
